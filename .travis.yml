@@ -9,7 +9,7 @@ before_script:
     -O $HOME/twrp.tar.xz
   - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
-  - cd $HOME/twrp/ && git clone https://github.com/ananjaser1211/android_device_samsung_treltexx.git device/samsung/treltexx
+  - cd $HOME/twrp/ && git clone https://github.com/ananjaser1211/TWRP_device_samsung_treltexx.git device/samsung/treltexx
   - rm -rf prebuilts/clang/host/linux-x86 && git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 prebuilts/clang/host/linux-x86 -b android-7.0.0_r21 --depth=1
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery --depth=1
   - |
@@ -35,7 +35,7 @@ deploy:
   file: $HOME/twrp/TWRP-*
   on:
     tags: false
-    repo: ananjaser1211/android_device_samsung_treltexx
+    repo: ananjaser1211/TWRP_device_samsung_treltexx
     branch: twrp-7.1
 branches:
   except:
