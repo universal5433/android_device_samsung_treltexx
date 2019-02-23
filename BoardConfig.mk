@@ -20,6 +20,7 @@ LOCAL_PATH := device/samsung/treltexx
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/treltexx
 TARGET_KERNEL_CONFIG := lineage_trelte_defconfig
 
 # Properties
