@@ -33,13 +33,26 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS += \
 	device/samsung/treltexx/overlay	
 
+# Radio
 PRODUCT_PACKAGES += \
-    SamsungServiceMode	
+    android.hardware.radio@1.0 \
+    android.hardware.radio.deprecated@1.0 \
+    libxml2 \
+    libprotobuf-cpp-full \
+    rild \
+    libril \
+    libsecril-client \
+    libsecril-client-sap \
+    modemloader \
+    Stk
+
+PRODUCT_PACKAGES += \
+    SamsungServiceMode
 
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
- 
+
 # Sensors wrapper
 PRODUCT_PACKAGES += \
     sensors.universal5433
