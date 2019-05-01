@@ -43,7 +43,6 @@ PRODUCT_PACKAGES += \
     libril \
     libsecril-client \
     libsecril-client-sap \
-    modemloader \
     Stk
 
 PRODUCT_PACKAGES += \

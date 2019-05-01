@@ -1,11 +1,3 @@
-# Parse hardware revision (needs to happen before cbd starts)
-service modemloader /system/bin/modemloader
-    class core
-    oneshot
-
-on property:ro.modemloader.done=1
-    start cpboot-daemon
-
 on init
     # RIL <-> audioserver comm
     chmod 0644 /proc/cmdline	
@@ -16,7 +8,6 @@ service cpboot-daemon /vendor/bin/cbd -d -tstem7400 -bh -mh -p 13
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
     seclabel u:r:cpboot-daemon:s0
-    disabled
 
 # RIL
 service ril-daemon /vendor/bin/hw/rild
