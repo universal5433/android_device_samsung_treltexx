@@ -5,3 +5,6 @@ ro.ril.gprsclass=10
 ro.ril.telephony.mqanelements=6
 ro.telephony.default_network=9
 persist.radio.sib16_support=0
+# CPBoot Bypass
+ro.csc.sales_code=XSG
+hw.revision=21
