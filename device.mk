@@ -44,6 +44,10 @@ PRODUCT_PACKAGES += \
     libsecril-client \
     libsecril-client-sap \
     Stk
+	
+# CPBoot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/hw/cbd	
 
 PRODUCT_PACKAGES += \
     SamsungServiceMode

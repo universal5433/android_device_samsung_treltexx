@@ -3,7 +3,7 @@ on init
     chmod 0644 /proc/cmdline	
 
 # CP Boot Daemon (CBD)
-service cpboot-daemon /vendor/bin/cbd -d -tstem7400 -bh -mh -p 13
+service cpboot-daemon /vendor/bin/hw/cbd -d -tstem7400 -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
