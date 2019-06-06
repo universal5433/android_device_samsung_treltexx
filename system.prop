@@ -1,10 +1,13 @@
 # RIL
 rild.libpath=/system/lib/libsec-ril.so
+rild.libargs=-d /dev/ttyS0
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.ril.telephony.mqanelements=6
 ro.telephony.default_network=9
 persist.radio.sib16_support=0
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.add_power_save=1
 # CPBoot Bypass
 ro.csc.sales_code=XSG
 hw.revision=21
