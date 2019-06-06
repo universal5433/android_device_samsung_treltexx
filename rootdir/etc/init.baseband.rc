@@ -7,15 +7,31 @@ service cpboot-daemon /vendor/bin/hw/cbd -d -tstem7400 -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
-    seclabel u:r:cpboot-daemon:s0
 
-# RIL
-service ril-daemon /vendor/bin/hw/rild
+service ril-daemon /vendor/bin/hw/rild -c 1 -l /system/lib/libsec-ril.so
     class main
     user root
-    group radio cache inet misc audio log readproc wakelock
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+    group radio cache inet misc audio sdcard_r sdcard_rw log vpn system readproc wakelock oem_5432
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW SYS_ADMIN CHOWN DAC_READ_SEARCH
+    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+    onrestart restart cpboot-daemon
 
 on property:persist.sys.cpboot=disable
-    stop cpboot-daemon
     stop ril-daemon
+    stop cpboot-daemon
+	
+on post-fs-data
+    # Remove symlinks to avoid issues with migrate after nandroid restores
+    # Will be recreated at end of boot
+    rm -r -d /data/data/com.android.providers.telephony/databases
+    rm -r -d /data/data/com.android.providers.telephony/shared_prefs
+
+    # Symlink directories to access telephony.db and preferred-apn.xml required by cbd
+    symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
+    symlink /data/user_de/0/com.android.providers.telephony/shared_prefs /data/data/com.android.providers.telephony/shared_prefs	
+	
+on early-boot
+# Assign TCP buffer thresholds to be ceiling value of technology maximums
+# Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max 2097152
+    write /proc/sys/net/core/wmem_max 2097152	
