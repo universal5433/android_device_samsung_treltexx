@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
     libril \
     libsecril-client \
     libsecril-client-sap \
-    Stk
+    Stk \
+	modemloader
 	
 # CPBoot
 PRODUCT_COPY_FILES += \

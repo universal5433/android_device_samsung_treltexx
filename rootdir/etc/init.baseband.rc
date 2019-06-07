@@ -1,3 +1,11 @@
+# Parse hardware revision (needs to happen before cbd starts)
+service modemloader /system/bin/modemloader
+    class core
+    oneshot
+	
+on property:ro.modemloader.done=1
+    start cpboot-daemon	
+	
 on init
     # RIL <-> audioserver comm
     chmod 0644 /proc/cmdline	
@@ -7,6 +15,7 @@ service cpboot-daemon /vendor/bin/hw/cbd -d -tstem7400 -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
+	disabled
 
 service ril-daemon /vendor/bin/hw/rild -c 1 -l /system/lib/libsec-ril.so
     class main
@@ -20,12 +29,17 @@ on property:persist.sys.cpboot=disable
     stop ril-daemon
     stop cpboot-daemon
 	
+on property:ro.cbd.restart=1
+    restart cpboot-daemon
+    restart ril-daemon	
+	
 on post-fs-data
     # Remove symlinks to avoid issues with migrate after nandroid restores
     # Will be recreated at end of boot
     rm -r -d /data/data/com.android.providers.telephony/databases
     rm -r -d /data/data/com.android.providers.telephony/shared_prefs
 
+on property:sys.boot_completed=1
     # Symlink directories to access telephony.db and preferred-apn.xml required by cbd
     symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
     symlink /data/user_de/0/com.android.providers.telephony/shared_prefs /data/data/com.android.providers.telephony/shared_prefs	
