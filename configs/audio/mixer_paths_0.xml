@@ -865,6 +865,13 @@
         <path name="headset_media" />
         <path name="headset_media_gains" />
     </path>
+	
+    <path name="voice-earpiece">
+        <path name="verb_voicecall" />
+        <path name="earpiece_enable" />
+        <path name="earpiece_incall_WB" />
+        <path name="earpiece_incall_gains" />
+    </path>	
 
     <path name="voice-earpiece-nb">
         <path name="verb_voicecall" />
@@ -879,6 +886,13 @@
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
     </path>
+	
+	<path name="voice-speaker">
+        <path name="verb_voicecall" />
+        <path name="speaker_enable" />
+        <path name="speaker_incall_WB" />
+        <path name="speaker_incall_gains" />
+	</path>	
 
     <path name="voice-speaker-nb">
         <path name="verb_voicecall" />
@@ -893,6 +907,13 @@
         <path name="speaker_incall_WB" />
         <path name="speaker_incall_gains" />
     </path>
+	
+	<path name="voice-headphones">
+        <path name="verb_voicecall" />
+        <path name="headset_enable" />
+        <path name="headset_incall_WB" />
+        <path name="headset_incall_gains" />
+	</path>	
 
     <path name="voice-headphones-nb">
         <path name="verb_voicecall" />
@@ -976,6 +997,10 @@
     </path>
 
     <path name="headset-mic">
+		<!-- Call recording route -->
+		<ctl name="LHPF1 Input 1" value="IN2L"/>
+		<ctl name="AIF1TX1 Input 1" value="LHPF1"/>
+		<ctl name="AIF1TX2 Input 1" value="LHPF1"/>	
         <path name="channel_right" />
         <path name="headset_mic" />
         <path name="headset_mic_gains" />
