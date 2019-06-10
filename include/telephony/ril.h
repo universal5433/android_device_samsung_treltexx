@@ -586,6 +586,7 @@ typedef struct {
     int errorCode;    /* See 3GPP 27.005, 3.2.5 for GSM/UMTS,
                          3GPP2 N.S0005 (IS-41C) Table 171 for CDMA,
                          -1 if unknown or not applicable*/
+    int data;         /* M7450 modem returns an unknown value at the end */						 
 } RIL_SMS_Response;
 
 typedef struct {
