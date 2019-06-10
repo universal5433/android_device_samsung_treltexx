@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2018 DevKingsTeam Open-Source
+# Copyright (C) 2019 Ananjaser1211 Open-Source
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,9 +19,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
-	
+
+# Time Zone data for Recovery
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := treltexx
+PRODUCT_RELEASE_NAME := treltexx
 PRODUCT_NAME := omni_treltexx
 PRODUCT_MODEL := SM-N910C
 PRODUCT_BRAND := samsung
