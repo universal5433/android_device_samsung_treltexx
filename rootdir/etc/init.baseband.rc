@@ -30,16 +30,6 @@ service cpboot-daemon /vendor/bin/hw/cbd -d -tstem7400 -bh -mh -p 13
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
 	disabled
-
-service ril-daemon /vendor/bin/hw/rild -c 1 -l /system/lib/libsec-ril.so
-    class main
-    socket rild stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio sdcard_r sdcard_rw diag log readproc wakelock
-    onrestart restart cpboot-daemon
-    disabled
 	
 on property:ro.modemloader.done=1
     start cpboot-daemon
@@ -48,10 +38,6 @@ on property:ro.modemloader.done=1
 on property:ro.cbd.restart=1
     restart cpboot-daemon
     restart ril-daemon
-	
-on property:persist.sys.cpboot=disable
-    stop ril-daemon
-    stop cpboot-daemon	
 	
 on post-fs-data
     # Remove symlinks to avoid issues with migrate after nandroid restores
