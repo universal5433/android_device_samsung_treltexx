@@ -100,6 +100,7 @@ extern "C" {
 #define MAX_QEMU_PIPE_NAME_LENGTH  11
 #define MAX_UUID_LENGTH 64
 
+struct ril_event;
 typedef void * RIL_Token;
 
 typedef enum {
@@ -586,14 +587,9 @@ typedef struct {
     int errorCode;    /* See 3GPP 27.005, 3.2.5 for GSM/UMTS,
                          3GPP2 N.S0005 (IS-41C) Table 171 for CDMA,
                          -1 if unknown or not applicable*/
-    int data;         /* M7450 modem returns an unknown value at the end */						 
+    int vendor_data;  /* M7450 modem returns an unknown value at the end */						 
 } RIL_SMS_Response;
 
-typedef struct {
-    RIL_SMS_Response response;
-    int retryCount;   /* Samsung */
-} RIL_SMS_Response_Ext;
- 
 /** Used by RIL_REQUEST_WRITE_SMS_TO_SIM */
 typedef struct {
     int status;     /* Status of message.  See TS 27.005 3.1, "<stat>": */
