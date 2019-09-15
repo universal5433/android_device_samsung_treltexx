@@ -15,4 +15,10 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_treltexx.mk \
-    $(LOCAL_DIR)/rr_treltexx.mk    
+    $(LOCAL_DIR)/rr_treltexx.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_treltexx-user \
+    lineage_treltexx-userdebug \
+    lineage_treltexx-eng \
+    rr_treltexx-userdebug
