@@ -31,7 +31,7 @@ PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-N910C
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
-BUILD_FINGERPRINT := samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXS2DRL1:user/release-keys
+BUILD_FINGERPRINT := samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys
 BOARD_VENDOR := samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
