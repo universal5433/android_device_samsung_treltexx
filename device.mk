@@ -25,10 +25,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths_0.xml:system/etc/mixer_paths_0.xml
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-	device/samsung/treltexx/overlay	
-
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0 \
