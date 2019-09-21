@@ -19,7 +19,7 @@ $(call inherit-product, device/samsung/treltexx/device.mk)
 $(call inherit-product, device/samsung/trelte-common/device-common.mk)
 
 # Inherit from those products. Most specific first
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common RR stuff.
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
@@ -35,4 +35,6 @@ BUILD_FINGERPRINT := samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/rel
 BOARD_VENDOR := samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=treltexx
+    PRODUCT_NAME=treltexx \
+	TARGET_DEVICE=treltexx \
+  	PRIVATE_BUILD_DESC="treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys"
