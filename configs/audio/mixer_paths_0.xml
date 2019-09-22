@@ -81,7 +81,7 @@
     <!-- Stereo recording from mics -->
     <!-- need to move channeltype -->
     <!-- Gain for main and headset mics -->
-    <ctl name="IN1R Volume" value="30" />
+    <ctl name="IN1R Volume" value="32" />
 
     <!-- Gain for sub and 3rd mic -->
     <ctl name="IN2L Volume" value="30" />
@@ -910,11 +910,11 @@
 	
 	<!--Default mic gain-->
     <path name="builtin_mic_gains">
-        <ctl name="IN1R Digital Volume" value="160" />
+        <ctl name="IN1R Digital Volume" value="210" />
     </path>
 	<!--Calls mic gain-->	
     <path name="builtin_mic_gains_incall">
-        <ctl name="IN1R Digital Volume" value="126" />
+        <ctl name="IN1R Digital Volume" value="130" />
         <ctl name="LHPF1 Input 1 Volume" value="32" />
     </path>
 	
@@ -1462,23 +1462,23 @@
     <!-- ########## Capture ########## -->
 
     <path name="earpiece-mic">
-        <path name="channel_left" />
+        <path name="channel_left" />	
         <path name="builtin_mic_default" />
-        <path name="builtin_mic_gains_incall" />
+        <path name="builtin_mic_gains" />
         <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="speaker-mic">
-        <path name="channel_right" />
-        <path name="back_mic_default" />
-        <path name="back_mic_gains_incall" />
-        <path name="device-back-mic-enable" />
+        <path name="channel_left" />
+        <path name="builtin_mic_default" />
+        <path name="builtin_mic_gains" />
+        <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="voice-mic">
         <path name="channel_left" />
         <path name="builtin_mic_default" />
-        <path name="builtin_mic_gains" />
+        <path name="builtin_mic_gains_incall" />
         <path name="device-builtin-mic-enable" />
     </path>
 	
@@ -1494,10 +1494,10 @@
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
-        <path name="channel_stereo" />
-		<path name="scenario-two-mic-earpiece-incall-wb" />		
-        <path name="volume-two-mic-default" />
-        <path name="device-two-mic-enable" />
+        <path name="channel_left" />
+		<path name="builtin_mic_earpiece_incall_nb" />		
+        <path name="builtin_mic_gains_incall" />
+        <path name="device-builtin-mic-enable" />
     </path>
 	
     <path name="voice-earpiece-mic-nb">
@@ -1505,9 +1505,9 @@
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
         <path name="channel_left" />
-		<path name="scenario-two-mic-earpiece-incall-nb" />
-        <path name="volume-two-mic-incall" />
-        <path name="device-two-mic-enable" />
+		<path name="builtin_mic_earpiece_incall_nb" />		
+        <path name="builtin_mic_gains_incall" />
+        <path name="device-builtin-mic-enable" />
     </path>	
 
     <path name="voice-earpiece-mic-wb">
@@ -1515,9 +1515,9 @@
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
         <path name="channel_left" />
-		<path name="scenario-two-mic-earpiece-incall-wb" />
-        <path name="volume-two-mic-incall" />
-        <path name="device-two-mic-enable" />
+		<path name="builtin_mic_earpiece_incall_wb" />
+        <path name="builtin_mic_gains_incall" />
+        <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="voice-speaker-mic">
