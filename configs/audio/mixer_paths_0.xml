@@ -263,53 +263,6 @@
         <ctl name="HPOUT1 DRE Switch" value="0" />
     </path>
 
-    <path name="device-builtin-mic-enable">
-        <ctl name="Main Mic Switch" value="1" />
-    </path>
-
-    <path name="device-builtin-mic-disable">
-        <ctl name="Main Mic Switch" value="0" />
-        <ctl name="DSP Virtual Output Mux" value="None" />
-    </path>
-	
-    <path name="device-back-mic-enable">
-        <ctl name="Sub Mic Switch" value="1" />
-    </path>
-
-    <path name="device-back-mic-disable">
-        <ctl name="Sub Mic Switch" value="0" />
-    </path>
-	
-    <path name="device-two-mic-enable">
-        <path name="device-builtin-mic-enable" />
-        <path name="device-back-mic-enable" />
-    </path>
-
-    <path name="device-two-mic-disable">
-        <path name="device-builtin-mic-disable" />
-        <path name="device-back-mic-disable" />
-    </path>
-
-    <path name="device-third-mic-enable">
-        <ctl name="Third Mic Switch" value="1" />
-    </path>
-
-    <path name="device-third-mic-disable">
-        <ctl name="Third Mic Switch" value="0" />
-    </path>	
-	
-    <path name="device-headset-mic-enable">
-        <ctl name="Headset Mic Switch" value="1" />
-    </path>
-
-    <path name="device-headset-mic-disable">
-        <ctl name="Headset Mic Switch" value="0" />
-    </path>	
-
-    <path name="headset_enable">
-        <ctl name="HP Switch" value="1" />
-    </path>
-
     <path name="headset_mic_enable">
         <ctl name="Headset Mic Switch" value="1" />
     </path>
@@ -1541,7 +1494,7 @@
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
-        <path name="channel-stereo" />
+        <path name="channel_stereo" />
 		<path name="scenario-two-mic-earpiece-incall-wb" />		
         <path name="volume-two-mic-default" />
         <path name="device-two-mic-enable" />
@@ -1608,29 +1561,31 @@
         <path name="headset_mic_incall" />
         <path name="headset_mic_gains_incall" />
     </path>
+	
+    <path name="voice-bt-sco-headset-mic">
+        <path name="channel-none" />
+        <path name="btsco_incall_mic" />
+    </path>	
 
     <path name="voice-bt-sco-mic">
+        <path name="channel-none" />
         <path name="btsco_incall_mic" />
-        <path name="channel_left" />
-        <path name="builtin_mic" />
-        <path name="builtin_mic_gains_louder" />
-        <path name="main_mic_enable" />		
+        <path name="btsco_incall_gains" />	
     </path>
 
     <path name="bt-sco-mic">
-        <path name="btsco_incall_mic" />
-        <path name="channel_left" />
-        <path name="builtin_mic" />
-        <path name="builtin_mic_gains_louder" />
-        <path name="main_mic_enable" />		
+        <path name="channel-none" />
+        <path name="btsco_media_mic" />	
     </path>
+	
+    <path name="bt-sco-mic-nb">
+        <path name="channel-none" />
+        <path name="btsco_incall_NB_mic" />	
+    </path>	
 
     <path name="bt-sco-mic-wb">
-        <path name="btsco_incall_mic" />
-        <path name="channel_left" />
-        <path name="builtin_mic" />
-        <path name="builtin_mic_gains_louder" />
-        <path name="main_mic_enable" />		
+        <path name="channel-none" />
+        <path name="btsco_incall_WB_mic" />	
     </path>
 
     <path name="voice-rec-headset-mic">
@@ -1642,16 +1597,16 @@
 
     <path name="voice-rec-mic">
         <path name="channel_left" />
-        <path name="headset_enable" />
-        <path name="headset_default" />
-        <path name="headset_mic_gains" />
+        <path name="builtin_mic_default" />
+        <path name="builtin_mic_gains" />
+        <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="camcorder-mic">
         <path name="channel_right" />
-        <path name="back_mic" />
-        <path name="back_mic_gains_louder" />
-        <path name="sub_mic_enable" />
+        <path name="back_mic_default" />
+        <path name="back_mic_gains_incall" />
+        <path name="device-back-mic-enable" />
     </path>
 
     <!--<path name="loopback-aec"> -->
