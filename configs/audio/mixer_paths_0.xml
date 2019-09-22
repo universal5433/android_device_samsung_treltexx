@@ -3,13 +3,13 @@
 
     <!-- ########## Initial mixer settings ########## -->
 	
-	<pcmdai InputRate="44100" />
-	<pcmdai OutputRate="44100" />
 	<pcmdai playback_link="6" />
 	<pcmdai playback_deep_link="3" />
 	<pcmdai capture_link="0" />
 	<pcmdai baseband_link="1" />
 	<pcmdai bluetooth_link="2" />
+	<pcmdai InputRate="44100" />
+	<pcmdai OutputRate="44100" />
 
     <!-- Noise gate control -->
     <ctl name="Noise Gate Switch" value="0" />
@@ -310,14 +310,6 @@
         <ctl name="HP Switch" value="1" />
     </path>
 
-    <path name="main_mic_enable">
-        <ctl name="Main Mic Switch" value="1" />
-    </path>
-
-    <path name="sub_mic_enable">
-        <ctl name="Sub Mic Switch" value="1" />
-    </path>
-
     <path name="headset_mic_enable">
         <ctl name="Headset Mic Switch" value="1" />
     </path>
@@ -553,7 +545,7 @@
     #######################################################
     -->
 
-    <path name="headphones_enable">
+    <path name="headset_enable">
         <ctl name="HP Switch" value="1" />
         <ctl name="VI SENSING SWITCH" value="0" />
     </path>
@@ -565,7 +557,7 @@
         <ctl name="HPOUT1 DRE Switch" value="0" />
     </path>
 	
-    <path name="headphones_default">
+    <path name="headset_default">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="ISRC2INT1 Input" value="ASRC2L" />
         <ctl name="LHPF3 Input 1" value="None" />
@@ -788,7 +780,7 @@
         <ctl name="DSP Virtual Output Mux" value="None" />
     </path>
 	
-    <path name="bultin_mic_default">
+    <path name="builtin_mic_default">
         <ctl name="DSP3 Aux 1" value="None" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="AIF1TX1 Input 3" value="None" />
@@ -804,7 +796,7 @@
         <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>	
 
-    <path name="bultin_mic_earpiece_communication">
+    <path name="builtin_mic_earpiece_communication">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="AIF1TX1 Input 3" value="None" />
         <ctl name="AIF1TX2 Input 3" value="None" />
@@ -818,7 +810,7 @@
         <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>	
 
-    <path name="bultin_mic_speaker_communication">
+    <path name="builtin_mic_speaker_communication">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="AIF1TX1 Input 3" value="None" />
         <ctl name="AIF1TX2 Input 3" value="None" />
@@ -832,7 +824,7 @@
         <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>
 	
-    <path name="bultin_mic_earpiece_incall_nb">
+    <path name="builtin_mic_earpiece_incall_nb">
         <ctl name="Sample Rate 2" value="8kHz" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP2 Rate" value="SYNCCLK rate 2" />
@@ -865,7 +857,7 @@
         <ctl name="LHPF2 Input 1" value="ISRC1INT2" />
     </path>
 	
-    <path name="bultin_mic_earpiece_incall_wb">
+    <path name="builtin_mic_earpiece_incall_wb">
         <ctl name="Sample Rate 2" value="8kHz" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP2 Rate" value="SYNCCLK rate 3" />
@@ -896,7 +888,7 @@
         <ctl name="LHPF2 Input 1" value="ISRC2INT2" />
     </path>	
 	
-    <path name="bultin_mic_speaker_incall_nb">
+    <path name="builtin_mic_speaker_incall_nb">
         <ctl name="Sample Rate 2" value="8kHz" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP2 Rate" value="SYNCCLK rate 2" />
@@ -930,7 +922,7 @@
         <ctl name="LHPF2 Input 1" value="ISRC1INT2" />
     </path>
 	
-    <path name="bultin_mic_speaker_incall_wb">
+    <path name="builtin_mic_speaker_incall_wb">
         <ctl name="Sample Rate 2" value="8kHz" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP2 Rate" value="SYNCCLK rate 3" />
@@ -964,11 +956,11 @@
     </path>		
 	
 	<!--Default mic gain-->
-    <path name="bultin_mic_gains">
+    <path name="builtin_mic_gains">
         <ctl name="IN1R Digital Volume" value="160" />
     </path>
 	<!--Calls mic gain-->	
-    <path name="bultin_mic_gains_incall">
+    <path name="builtin_mic_gains_incall">
         <ctl name="IN1R Digital Volume" value="126" />
         <ctl name="LHPF1 Input 1 Volume" value="32" />
     </path>
@@ -1050,43 +1042,43 @@
     </path>
 
     <path name="scenario-two-mic-earpiece-incall-nb">
-        <path name="bultin_mic_earpiece_incall_nb" />
+        <path name="builtin_mic_earpiece_incall_nb" />
         <path name="back_mic_earpiece_incall_nb" />
     </path>
 
     <path name="scenario-two-mic-earpiece-incall-wb">
-        <path name="bultin_mic_earpiece_incall_wb" />
+        <path name="builtin_mic_earpiece_incall_wb" />
         <path name="back_mic_earpiece_incall_wb" />
     </path>
 
     <path name="scenario-two-mic-speaker-incall-nb">
-        <path name="bultin_mic_speaker_incall_nb" />
+        <path name="builtin_mic_speaker_incall_nb" />
         <path name="back_mic_speaker_incall_nb" />
     </path>
 
     <path name="scenario-two-mic-speaker-incall-wb">
-        <path name="bultin_mic_speaker_incall_wb" />
+        <path name="builtin_mic_speaker_incall_wb" />
         <path name="back_mic_speaker_incall_wb" />
     </path>
 
     <path name="scenario-two-mic-headphones-incall-nb">
-        <path name="bultin_mic_earpiece_incall_nb" />
+        <path name="builtin_mic_earpiece_incall_nb" />
         <path name="back_mic_earpiece_incall_nb" />
     </path>
 
     <path name="scenario-two-mic-headphones-incall-wb">
-        <path name="bultin_mic_earpiece_incall_wb" />
+        <path name="builtin_mic_earpiece_incall_wb" />
         <path name="back_mic_earpiece_incall_wb" />
     </path>
 	
     <path name="volume-two-mic-default">
-        <path name="bultin_mic_gains">
-        <path name="back_mic_gains">
+        <path name="builtin_mic_gains" />
+        <path name="back_mic_gains" />
     </path>
 
     <path name="volume-two-mic-incall">
-        <path name="bultin_mic_gains_incall">
-        <path name="back_mic_gains_incall">
+        <path name="builtin_mic_gains_incall" />
+        <path name="back_mic_gains_incall" />
     </path>	
 	
     <!--
@@ -1374,9 +1366,9 @@
     # but as soon as the DSP is turned on.
     -->
 
-    <path name="earpiece">
+<path name="earpiece">
         <path name="verb_normal" />
-        <path name="earpiece_enable" />
+        <path name="device-earpiece-enable" />
         <path name="earpiece_media" />
         <path name="earpiece_media_gains" />
     </path>
@@ -1406,24 +1398,24 @@
         <path name="headset_media" />
         <path name="headset_media_gains" />
     </path>
-	
+
     <path name="voice-earpiece">
         <path name="verb_voicecall" />
-        <path name="earpiece_enable" />
+        <path name="device-earpiece-enable" />
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
-    </path>	
+    </path>
 
-    <path name="voice-earpiece-nb">
+   <path name="voice-earpiece-nb">
         <path name="verb_voicecall" />
-        <path name="earpiece_enable" />
+        <path name="device-earpiece-enable" />
         <path name="earpiece_incall_NB" />
         <path name="earpiece_incall_gains" />
     </path>
 
     <path name="voice-earpiece-wb">
         <path name="verb_voicecall" />
-        <path name="earpiece_enable" />
+        <path name="device-earpiece-enable" />
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
     </path>
@@ -1512,120 +1504,134 @@
         <path name="speaker_media" />
         <path name="speaker_media_gains" />
         <path name="hdmi_media" />
-    </path> 
+    </path>
 
     <!-- ########## Capture ########## -->
-	
-    <path name="voice-mic">
-        <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
-        <path name="main_mic_enable" />
-    </path>	
 
     <path name="earpiece-mic">
         <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
-        <path name="main_mic_enable" />
+        <path name="builtin_mic_default" />
+        <path name="builtin_mic_gains_incall" />
+        <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="speaker-mic">
         <path name="channel_right" />
-        <path name="back_mic" />
-        <path name="back_mic_gains_louder" />
-        <path name="sub_mic_enable" />
+        <path name="back_mic_default" />
+        <path name="back_mic_gains_incall" />
+        <path name="device-back-mic-enable" />
     </path>
 
+    <path name="voice-mic">
+        <path name="channel_left" />
+        <path name="builtin_mic_default" />
+        <path name="builtin_mic_gains" />
+        <path name="device-builtin-mic-enable" />
+    </path>
+	
     <path name="headset-mic">
-		<!-- Call recording route -->
-		<ctl name="LHPF1 Input 1" value="IN2L"/>
-		<ctl name="AIF1TX1 Input 1" value="LHPF1"/>
-		<ctl name="AIF1TX2 Input 1" value="LHPF1"/>	
         <path name="channel_right" />
         <path name="headset_mic" />
         <path name="headset_mic_gains" />
-        <path name="headset_mic_enable" />
-    </path>
+        <path name="device-headset-mic-enable" />
+    </path>	
 
     <!-- Two mic -->
-    <path name="voice-earpiece-mic-nb">
-        <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains" />
-        <path name="main_mic_enable" />
+    <path name="voice-earpiece-mic">
+        <!-- Should be main mic and back mic -->
+        <!-- Capture channel set to main mic -->
+        <!-- Empty path -->
+        <path name="channel-stereo" />
+		<path name="scenario-two-mic-earpiece-incall-wb" />		
+        <path name="volume-two-mic-default" />
+        <path name="device-two-mic-enable" />
     </path>
+	
+    <path name="voice-earpiece-mic-nb">
+        <!-- Should be main mic and back mic -->
+        <!-- Capture channel set to main mic -->
+        <!-- Empty path -->
+        <path name="channel_left" />
+		<path name="scenario-two-mic-earpiece-incall-nb" />
+        <path name="volume-two-mic-incall" />
+        <path name="device-two-mic-enable" />
+    </path>	
 
     <path name="voice-earpiece-mic-wb">
+        <!-- Should be main mic and back mic -->
+        <!-- Capture channel set to main mic -->
+        <!-- Empty path -->
         <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains" />
-        <path name="main_mic_enable" />
+		<path name="scenario-two-mic-earpiece-incall-wb" />
+        <path name="volume-two-mic-incall" />
+        <path name="device-two-mic-enable" />
     </path>
 
-    <path name="voice-speaker-mic-nb">
+    <path name="voice-speaker-mic">
         <path name="channel_right" />
-        <path name="back_mic" />
-        <path name="back_mic_gains" />
-        <path name="sub_mic_enable" />
+        <path name="back_mic_default" />
+        <path name="back_mic_gains_incall" />
+        <path name="device-back-mic-enable" />
     </path>
 
     <path name="voice-speaker-mic-wb">
         <path name="channel_right" />
-        <path name="back_mic" />
-        <path name="back_mic_gains" />
-        <path name="sub_mic_enable" />
+        <path name="back_mic_speaker_incall_wb" />
+        <path name="back_mic_gains_incall" />
+        <path name="device-back-mic-enable" />
     </path>
-
-    <path name="voice-headset-mic-wb">
+	
+    <path name="voice-speaker-mic-nb">
         <path name="channel_right" />
+        <path name="back_mic_speaker_incall_nb" />
+        <path name="back_mic_gains_incall" />
+        <path name="device-back-mic-enable" />
+    </path>	
+
+    <path name="voice-headset-mic">
+        <path name="channel_right" />
+        <path name="headset_enable" />
         <path name="headset_mic" />
         <path name="headset_mic_gains" />
-        <path name="headset_mic_enable" />
     </path>
 	
     <path name="voice-headset-mic-nb">
         <path name="channel_right" />
-        <path name="headset_mic" />
-        <path name="headset_mic_gains" />
-        <path name="headset_mic_enable" />
+        <path name="headset_enable" />
+        <path name="headset_mic_incall" />
+        <path name="headset_mic_gains_incall" />
     </path>	
+
+    <path name="voice-headset-mic-wb">
+        <path name="channel_right" />
+        <path name="headset_enable" />
+        <path name="headset_mic_incall" />
+        <path name="headset_mic_gains_incall" />
+    </path>
 
     <path name="voice-bt-sco-mic">
         <path name="btsco_incall_mic" />
         <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
+        <path name="builtin_mic" />
+        <path name="builtin_mic_gains_louder" />
         <path name="main_mic_enable" />		
     </path>
-
-    <!-- <path name="hdmi-mic">
-        Empty path
-    </path> -->
 
     <path name="bt-sco-mic">
         <path name="btsco_incall_mic" />
         <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
+        <path name="builtin_mic" />
+        <path name="builtin_mic_gains_louder" />
         <path name="main_mic_enable" />		
     </path>
 
     <path name="bt-sco-mic-wb">
         <path name="btsco_incall_mic" />
         <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
+        <path name="builtin_mic" />
+        <path name="builtin_mic_gains_louder" />
         <path name="main_mic_enable" />		
     </path>
-	
-    <path name="bt-sco-mic-nb">
-        <path name="btsco_incall_mic" />
-        <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
-        <path name="main_mic_enable" />		
-    </path>	
 
     <path name="voice-rec-headset-mic">
         <path name="channel_right" />
@@ -1636,9 +1642,9 @@
 
     <path name="voice-rec-mic">
         <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
-        <path name="main_mic_enable" />
+        <path name="headset_enable" />
+        <path name="headset_default" />
+        <path name="headset_mic_gains" />
     </path>
 
     <path name="camcorder-mic">
@@ -1647,20 +1653,9 @@
         <path name="back_mic_gains_louder" />
         <path name="sub_mic_enable" />
     </path>
-	
-	<!-- interview input -->
-	<path name="interview-mic">
-        <path name="channel_left" />
-        <path name="bultin_mic" />
-        <path name="bultin_mic_gains_louder" />
-        <path name="main_mic_enable" />
-        <path name="back_mic" />
-        <path name="back_mic_gains" />
-        <path name="sub_mic_enable" />		
-	</path>	
 
     <!--<path name="loopback-aec"> -->
         <!--Empty path -->
     <!--</path>-->
-
+	
 </mixer>
