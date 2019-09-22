@@ -339,9 +339,8 @@
         <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
-        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <ctl name="RCV Switch" value="1" />
+		<!--Force speaker off-->
         <ctl name="SPK Switch" value="0" />
     </path>
 	
@@ -363,11 +362,8 @@
         <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
         <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
         <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
-        <ctl name="AIF2 Mode" value="Master" />
-        <ctl name="DSP Virtual Output Mux" value="None" />
-        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
         <ctl name="RCV Switch" value="1" />
+		<!--Force speaker off-->
         <ctl name="SPK Switch" value="0" />
     </path>
 
@@ -389,33 +385,45 @@
         <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
         <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
         <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
-        <ctl name="AIF2 Mode" value="Master" />
-        <ctl name="DSP Virtual Output Mux" value="None" />
-        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
         <ctl name="RCV Switch" value="1" />
+		<!--Force speaker off-->		
+        <ctl name="SPK Switch" value="0" />
+    </path>
+	
+    <path name="earpiece_videocall">
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
+        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
+        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
+        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
+        <ctl name="HPOUT3L Input 2" value="None" />
+        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
+        <ctl name="HPOUT3R Input 2" value="None" />
+        <ctl name="DSP4 Aux 2" value="None" />
+        <ctl name="DSP4 Aux 3" value="None" />
+        <ctl name="DSP4L Input 1" value="None" />
+        <ctl name="DSP4L Input 2" value="None" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
+        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
+        <ctl name="LHPF3 Input 1" value="None" />
+        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
+        <ctl name="RCV Switch" value="1" />
+		<!--Force speaker off-->		
         <ctl name="SPK Switch" value="0" />
     </path>
 
     <!-- ### Volume ### -->
 
     <path name="earpiece_media_gains">
-        <ctl name="HPOUT3 Digital Volume" value="113" />
-        <ctl name="HPOUT3L Input 1 Volume" value="32" />
-        <ctl name="HPOUT3L Input 2 Volume" value="32" />
+		<ctl name="HPOUT3 Digital Volume" value="128" />
+		<ctl name="HPOUT3L Input 1 Volume" value="32" />
     </path>
 
     <path name="earpiece_incall_gains">
-        <ctl name="HPOUT3 Digital Volume" value="128" />
-        <ctl name="HPOUT3L Input 1 Volume" value="30" />
-        <ctl name="HPOUT3L Input 2 Volume" value="30" />
-
-        <ctl name="HPOUT3L Input 3 Volume" value="30" />
-        <ctl name="HPOUT3L Input 4 Volume" value="30" />
-        <ctl name="HPOUT3L Input 1 Volume" value="30" />
-        <ctl name="HPOUT3L Input 2 Volume" value="30" />
-        <ctl name="HPOUT3L Input 3 Volume" value="30" />
-        <ctl name="HPOUT3L Input 4 Volume" value="30" />
+		<ctl name="HPOUT3 Digital Volume" value="128" />
+		<ctl name="HPOUT3L Input 1 Volume" value="32" />
+		<!--CP RX-->
+		<ctl name="HPOUT3L Input 3 Volume" value="32" />
+		<ctl name="HPOUT3L Input 4 Volume" value="32" />		
     </path>
 
     <!--
