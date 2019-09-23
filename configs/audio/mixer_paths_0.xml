@@ -81,7 +81,7 @@
     <!-- Stereo recording from mics -->
     <!-- need to move channeltype -->
     <!-- Gain for main and headset mics -->
-    <ctl name="IN1R Volume" value="32" />
+    <ctl name="IN1R Volume" value="30" />
 
     <!-- Gain for sub and 3rd mic -->
     <ctl name="IN2L Volume" value="30" />
@@ -914,7 +914,7 @@
     </path>
 	<!--Calls mic gain-->
     <path name="builtin_mic_gains_incall">
-        <ctl name="IN1R Digital Volume" value="130" />
+        <ctl name="IN1R Digital Volume" value="126" />
         <ctl name="LHPF1 Input 1 Volume" value="32" />
     </path>
 
