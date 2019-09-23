@@ -498,7 +498,7 @@
     #######################################################
     -->
 
-    <path name="headset_enable">
+    <path name="device-headset-mic-enable">
         <ctl name="HP Switch" value="1" />
         <ctl name="VI SENSING SWITCH" value="0" />
     </path>
@@ -1110,9 +1110,9 @@
     </path>
 	
     <path name="headset_mic_gains">
-        <ctl name="IN2R Volume" value="16" />
+        <ctl name="IN2R Volume" value="30" />
         <ctl name="IN2R Digital Volume" value="128" />
-        <ctl name="LHPF2 Input 1 Volume" value="32" />
+        <ctl name="LHPF2 Input 1 Volume" value="40" />
     </path>
 
     <path name="headset_mic_gains_incall">
@@ -1335,7 +1335,7 @@
 
     <path name="headphones">
         <path name="verb_normal" />
-        <path name="headset_enable" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_media" />
         <path name="headset_media_gains" />
     </path>
@@ -1347,7 +1347,7 @@
         <path name="speaker_media" />
         <path name="speaker_media_gains" />
         <!--        Headphones      -->
-        <path name="headset_enable" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_media" />
         <path name="headset_media_gains" />
     </path>
@@ -1396,21 +1396,21 @@
 	
 	<path name="voice-headphones">
         <path name="verb_voicecall" />
-        <path name="headset_enable" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_incall_WB" />
         <path name="headset_incall_gains" />
 	</path>	
 
     <path name="voice-headphones-nb">
         <path name="verb_voicecall" />
-        <path name="headset_enable" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_incall_NB" />
         <path name="headset_incall_gains" />
     </path>
 
     <path name="voice-headphones-wb">
         <path name="verb_voicecall" />
-        <path name="headset_enable" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_incall_WB" />
         <path name="headset_incall_gains" />
     </path>
@@ -1483,8 +1483,8 @@
     </path>
 	
     <path name="headset-mic">
-        <path name="channel_right" />
-        <path name="headset_mic" />
+        <path name="channel_left" />
+        <path name="headset_mic_incall" />
         <path name="headset_mic_gains" />
         <path name="device-headset-mic-enable" />
     </path>	
@@ -1542,22 +1542,22 @@
     </path>	
 
     <path name="voice-headset-mic">
-        <path name="channel_right" />
-        <path name="headset_enable" />
-        <path name="headset_mic" />
+        <path name="channel_left" />
+        <path name="headset_mic_incall" />
         <path name="headset_mic_gains" />
+        <path name="device-headset-mic-enable" />
     </path>
 	
     <path name="voice-headset-mic-nb">
-        <path name="channel_right" />
-        <path name="headset_enable" />
+        <path name="channel_left" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_mic_incall" />
         <path name="headset_mic_gains_incall" />
     </path>	
 
     <path name="voice-headset-mic-wb">
-        <path name="channel_right" />
-        <path name="headset_enable" />
+        <path name="channel_left" />
+        <path name="device-headset-mic-enable" />
         <path name="headset_mic_incall" />
         <path name="headset_mic_gains_incall" />
     </path>
@@ -1589,10 +1589,10 @@
     </path>
 
     <path name="voice-rec-headset-mic">
-        <path name="channel_right" />
-        <path name="headset_mic" />
+        <path name="channel_left" />
+        <path name="headset_mic_incall" />
         <path name="headset_mic_gains" />
-        <path name="headset_mic_enable" />
+        <path name="device-headset-mic-enable" />
     </path>
 
     <path name="voice-rec-mic">
