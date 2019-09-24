@@ -371,7 +371,7 @@
     </path>
 
     <path name="earpiece_incall_gains">
-		<ctl name="HPOUT3 Digital Volume" value="128" />
+		<ctl name="HPOUT3 Digital Volume" value="124" />
 		<ctl name="HPOUT3L Input 1 Volume" value="32" />
 		<!--CP RX-->
 		<ctl name="HPOUT3L Input 3 Volume" value="32" />
@@ -476,7 +476,7 @@
 		<ctl name="SPK Switch" value="1" />
     </path>
     <path name="speaker_media_gains">
-        <ctl name="HPOUT2 Digital Volume" value="128" />
+        <ctl name="HPOUT2 Digital Volume" value="140" />
         <ctl name="HPOUT2L Input 1 Volume" value="26" />
         <ctl name="HPOUT2R Input 1 Volume" value="26" />
         <ctl name="DSP4L Input 1 Volume" value="26" />
@@ -1110,14 +1110,14 @@
     </path>
 
     <path name="headset_mic_gains">
-        <ctl name="IN2R Volume" value="30" />
-        <ctl name="IN2R Digital Volume" value="128" />
+        <ctl name="IN2R Volume" value="35" />
+        <ctl name="IN2R Digital Volume" value="135" />
         <ctl name="LHPF2 Input 1 Volume" value="40" />
     </path>
 
     <path name="headset_mic_gains_incall">
-        <ctl name="IN2R Volume" value="18" />
-        <ctl name="IN2R Digital Volume" value="128" />
+        <ctl name="IN2R Volume" value="30" />
+        <ctl name="IN2R Digital Volume" value="135" />
         <ctl name="HPOUT1L Input 3 Volume" value="9" />
         <ctl name="HPOUT1R Input 3 Volume" value="9" />
         <ctl name="LHPF2 Input 1 Volume" value="32" />
@@ -1421,8 +1421,8 @@
     </path>
 
     <path name="bt-sco-headset-nb">
-        <path name="btsco_incall_NB" />
-        <path name="btsco_incall_gains" />
+        <path name="btsco_media" />
+        <path name="btsco_media_gains" />
     </path>
 
     <path name="bt-sco-headset-wb">
@@ -1580,12 +1580,12 @@
 
     <path name="bt-sco-mic-nb">
         <path name="channel-none" />
-        <path name="btsco_incall_NB_mic" />
+        <path name="btsco_media_mic" />
     </path>
 
     <path name="bt-sco-mic-wb">
         <path name="channel-none" />
-        <path name="btsco_incall_WB_mic" />
+        <path name="btsco_media_mic" />
     </path>
 
     <path name="voice-rec-headset-mic">
