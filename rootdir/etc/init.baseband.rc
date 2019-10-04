@@ -17,21 +17,21 @@ on early-boot
 # Assign TCP buffer thresholds to be ceiling value of technology maximums
 # Increased technology maximums should be reflected here.
     write /proc/sys/net/core/rmem_max 2097152
-    write /proc/sys/net/core/wmem_max 2097152		
+    write /proc/sys/net/core/wmem_max 2097152
 
 # Parse hardware revision (needs to happen before cbd starts)
 service modemloader /system/bin/modemloader
     class core
     oneshot
-	
+
 on property:ro.modemloader.done=1
     start cpboot-daemon
-    start ril-daemon	
-	
+    start ril-daemon
+
 on property:ro.cbd.restart=1
     restart cpboot-daemon
     restart ril-daemon
-	
+
 on post-fs-data
     # Remove symlinks to avoid issues with migrate after nandroid restores
     # Will be recreated at end of boot
@@ -39,12 +39,7 @@ on post-fs-data
     rmdir /data/data/com.android.providers.telephony/shared_prefs
     rm /data/data/com.android.providers.telephony/databases
     rm /data/data/com.android.providers.telephony/shared_prefs
-	
-    # Remove dalvik files that cause modem issues
-    rm /data/dalvik-cache/arm/system@framework@boot-telephony-common.art
-    rm /data/dalvik-cache/arm/system@framework@boot-telephony-common.vdex
-    rm /data/dalvik-cache/arm/system@framework@boot-telephony-common.oat	
-	
+
 on property:sys.boot_completed=1
     # Symlink directories to access telephony.db and preferred-apn.xml required by cbd
     symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
