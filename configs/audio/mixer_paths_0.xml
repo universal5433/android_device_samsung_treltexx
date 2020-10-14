@@ -8,8 +8,6 @@
 	<pcmdai capture_link="0" />
 	<pcmdai baseband_link="1" />
 	<pcmdai bluetooth_link="2" />
-	<pcmdai InputRate="44100" />
-	<pcmdai OutputRate="44100" />
 
     <!-- Noise gate control -->
     <ctl name="Noise Gate Switch" value="0" />
@@ -608,28 +606,44 @@
         <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
     </path>
     <path name="btsco_incall_NB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="Sample Rate 3" value="16kHz" />
-        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
-        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ASRC2R Input" value="AIF2RX2" />
-        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
-        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
-        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
-        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
+		<ctl name="AIF2 Mode" value="Slave" />
+		<ctl name="Sample Rate 2" value="8kHz" />
+		<ctl name="ASRC1 Rate 1" value="SYNCCLK rate 1" />
+		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
+		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
+		<ctl name="AIF3TX1 Input 1" value="ISRC2DEC3" />
+		<ctl name="AIF3TX2 Input 1" value="ISRC2DEC4" />
+		<ctl name="AIF3TX1 Input 2" value="ISRC2DEC1" />
+		<ctl name="AIF3TX2 Input 2" value="ISRC2DEC2" />
+		<ctl name="ISRC2DEC1 Input" value="ASRC1IN2L" />
+		<ctl name="ISRC2DEC2 Input" value="ASRC1IN2R" />
+		<ctl name="ISRC2DEC3 Input" value="AIF1RX1" />
+		<ctl name="ISRC2DEC4 Input" value="AIF1RX2" />
+		<ctl name="ASRC1IN2L Input" value="AIF2RX1" />
+		<ctl name="ASRC1IN2R Input" value="AIF2RX2" />
+		<!-- Call recording route -->
+		<ctl name="AIF1TX1 Input 2" value="ASRC1IN2L" />
+		<ctl name="AIF1TX2 Input 2" value="ASRC1IN2R" />
     </path>
     <path name="btsco_incall_WB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="Sample Rate 3" value="16kHz" />
-        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
-        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ASRC2R Input" value="AIF2RX2" />
-        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
-        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
-        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
-        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
+		<ctl name="AIF2 Mode" value="Slave" />
+		<ctl name="Sample Rate 2" value="16kHz" />
+		<ctl name="ASRC1 Rate 1" value="SYNCCLK rate 1" />
+		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
+		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
+		<ctl name="AIF3TX1 Input 1" value="ISRC2DEC3" />
+		<ctl name="AIF3TX2 Input 1" value="ISRC2DEC4" />
+		<ctl name="AIF3TX1 Input 2" value="ISRC2DEC1" />
+		<ctl name="AIF3TX2 Input 2" value="ISRC2DEC2" />
+		<ctl name="ISRC2DEC1 Input" value="ASRC1IN2L" />
+		<ctl name="ISRC2DEC2 Input" value="ASRC1IN2R" />
+		<ctl name="ISRC2DEC3 Input" value="AIF1RX1" />
+		<ctl name="ISRC2DEC4 Input" value="AIF1RX2" />
+		<ctl name="ASRC1IN2L Input" value="AIF2RX1" />
+		<ctl name="ASRC1IN2R Input" value="AIF2RX2" />
+		<!-- Call recording route -->
+		<ctl name="AIF1TX1 Input 2" value="ASRC1IN2L" />
+		<ctl name="AIF1TX2 Input 2" value="ASRC1IN2R" />
     </path>
 
     <path name="btsco_media_gains">
@@ -639,11 +653,10 @@
         <ctl name="AIF3TX2 Input 2 Volume" value="40" />
     </path>
     <path name="btsco_incall_gains">
-        <ctl name="AIF3TX1 Input 1 Volume" value="32" />
-        <ctl name="AIF3TX1 Input 2 Volume" value="32" />
-        <ctl name="AIF3TX2 Input 1 Volume" value="32" />
-        <ctl name="AIF3TX2 Input 2 Volume" value="32" />
-
+		<ctl name="AIF2TX1 Input 1 Volume" value="32" />
+		<ctl name="AIF2TX2 Input 1 Volume" value="32" />
+		<ctl name="AIF1TX1 Input 1 Volume" value="32" />
+		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
     </path>
 
     <!--
@@ -1110,17 +1123,15 @@
     </path>
 
     <path name="headset_mic_gains">
-        <ctl name="IN2R Volume" value="35" />
-        <ctl name="IN2R Digital Volume" value="135" />
-        <ctl name="LHPF2 Input 1 Volume" value="40" />
+ 		<ctl name="IN2L Volume" value="30" />
+		<ctl name="IN2L Digital Volume" value="128" />
+		<ctl name="LHPF1 Input 1 Volume" value="32" />
     </path>
 
     <path name="headset_mic_gains_incall">
-        <ctl name="IN2R Volume" value="30" />
-        <ctl name="IN2R Digital Volume" value="135" />
-        <ctl name="HPOUT1L Input 3 Volume" value="9" />
-        <ctl name="HPOUT1R Input 3 Volume" value="9" />
-        <ctl name="LHPF2 Input 1 Volume" value="32" />
+		<ctl name="IN1L Digital Volume" value="136" />
+		<ctl name="IN3L Digital Volume" value="136" />
+		<ctl name="LHPF1 Input 1 Volume" value="32" />
     </path>
 
     <!--
@@ -1129,37 +1140,33 @@
     #######################################################
     -->
     <path name="btsco_media_mic" >
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="AIF2TX1 Input 1" value="None" />
-        <ctl name="AIF2TX2 Input 1" value="None" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ASRC1L Input" value="AIF3RX1" />
-        <ctl name="ASRC1R Input" value="AIF3RX2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-        <ctl name="ISRC1INT1 Input" value="AIF3RX1" />
-        <ctl name="ISRC1INT2 Input" value="AIF3RX2" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC1INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
-        <ctl name="DSP3 Virtual Input" value="None" />
+		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
+		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
+		<ctl name="ISRC2INT1 Input" value="AIF3RX1" />
+		<ctl name="ISRC2INT2 Input" value="AIF3RX2" />
+		<ctl name="ASRC1IN1L Input" value="ISRC2INT1" />
+		<ctl name="ASRC1IN1R Input" value="ISRC2INT2" />
+		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
+		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
+		<!-- Call recording route -->
+		<ctl name="AIF1TX1 Input 1" value="ISRC2INT1" />
+		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
     </path>
 
     <path name="btsco_incall_mic" >
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="AIF2TX1 Input 1" value="None" />
-        <ctl name="AIF2TX2 Input 1" value="None" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ASRC1L Input" value="AIF3RX1" />
-        <ctl name="ASRC1R Input" value="AIF3RX2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-        <ctl name="ISRC1INT1 Input" value="AIF3RX1" />
-        <ctl name="ISRC1INT2 Input" value="AIF3RX2" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC1INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
-        <ctl name="DSP3 Virtual Input" value="None" />
+		<ctl name="Sample Rate 2" value="8kHz" />
+		<ctl name="ASRC1 Rate 1" value="SYNCCLK rate 1" />
+		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
+		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
+		<ctl name="ISRC2INT1 Input" value="AIF3RX1" />
+		<ctl name="ISRC2INT2 Input" value="AIF3RX2" />
+		<ctl name="ASRC1IN1L Input" value="ISRC2INT1" />
+		<ctl name="ASRC1IN1R Input" value="ISRC2INT2" />
+		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
+		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
+		<!-- Call recording route -->
+		<ctl name="AIF1TX1 Input 1" value="ISRC2INT1" />
+		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
     </path>
 
     <path name="btsco_incall_WB_mic">
@@ -1212,6 +1219,11 @@
         <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
         <ctl name="DSP3 Virtual Input" value="None" />
     </path>
+
+    <path name="btsco_media_mic_gain">
+		<ctl name="AIF1TX1 Input 1 Volume" value="32" />
+		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
+    </path> 
 
     <!--
     #######################################################
@@ -1483,10 +1495,17 @@
     </path>
 
     <path name="headset-mic">
-        <path name="channel_right" />
+        <path name="capture_channel_left" />
         <path name="headset_mic" />
-        <path name="headset_mic_gains" />
-        <path name="device-headset-mic-enable" />
+		<path name="headset_mic_gains" />
+		<path name="device-headset-mic-enable" />
+		<ctl name="AIF1TX1 Input 1" value="LHPF1" />
+		<ctl name="AIF1TX2 Input 1" value="LHPF1" />
+		<ctl name="LHPF1 Input 1" value="IN2L"/>
+    </path>
+
+    <path name="media-headset-mic">
+		<path name="headset-mic" />
     </path>
 
     <!-- Two mic -->
@@ -1576,16 +1595,19 @@
     <path name="bt-sco-mic">
         <path name="channel-none" />
         <path name="btsco_media_mic" />
+        <path name="btsco_media_mic_gain" />
     </path>
 
     <path name="bt-sco-mic-nb">
         <path name="channel-none" />
-        <path name="btsco_media_mic" />
+        <path name="btsco_incall_NB_mic" />
+        <path name="btsco_media_mic_gain" />
     </path>
 
     <path name="bt-sco-mic-wb">
         <path name="channel-none" />
-        <path name="btsco_media_mic" />
+        <path name="btsco_incall_WB_mic" />
+        <path name="btsco_media_mic_gain" />
     </path>
 
     <path name="voice-rec-headset-mic">
