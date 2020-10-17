@@ -1481,10 +1481,10 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="channel_left" />
-        <path name="builtin_mic_default" />
-        <path name="builtin_mic_gains" />
-        <path name="device-builtin-mic-enable" />
+        <path name="channel_right" />
+        <path name="back_mic_default" />
+        <path name="back_mic_gains_incall" />
+        <path name="device-back-mic-enable" />
     </path>
 
     <path name="voice-mic">
