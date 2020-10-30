@@ -1123,15 +1123,17 @@
     </path>
 
     <path name="headset_mic_gains">
- 		<ctl name="IN2L Volume" value="30" />
-		<ctl name="IN2L Digital Volume" value="128" />
-		<ctl name="LHPF1 Input 1 Volume" value="32" />
+        <ctl name="IN2R Volume" value="32" />
+        <ctl name="IN2R Digital Volume" value="135" />
+        <ctl name="LHPF2 Input 1 Volume" value="34" />
     </path>
 
     <path name="headset_mic_gains_incall">
-		<ctl name="IN1L Digital Volume" value="136" />
-		<ctl name="IN3L Digital Volume" value="136" />
-		<ctl name="LHPF1 Input 1 Volume" value="32" />
+        <ctl name="IN2R Volume" value="32" />
+        <ctl name="IN2R Digital Volume" value="135" />
+        <ctl name="HPOUT1L Input 3 Volume" value="9" />
+        <ctl name="HPOUT1R Input 3 Volume" value="9" />
+        <ctl name="LHPF2 Input 1 Volume" value="34" />
     </path>
 
     <!--
@@ -1495,13 +1497,10 @@
     </path>
 
     <path name="headset-mic">
-        <path name="capture_channel_left" />
+        <path name="channel_right" />
         <path name="headset_mic" />
 		<path name="headset_mic_gains" />
 		<path name="device-headset-mic-enable" />
-		<ctl name="AIF1TX1 Input 1" value="LHPF1" />
-		<ctl name="AIF1TX2 Input 1" value="LHPF1" />
-		<ctl name="LHPF1 Input 1" value="IN2L"/>
     </path>
 
     <path name="media-headset-mic">
