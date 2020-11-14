@@ -19,7 +19,7 @@ on early-boot
     write /proc/sys/net/core/wmem_max 2097152
 
 # Parse hardware revision (needs to happen before cbd starts)
-service modemloader /system/bin/modemloader
+service modemloader /vendor/bin/modemloader
     class core
     oneshot
 
