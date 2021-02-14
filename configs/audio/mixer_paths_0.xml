@@ -923,7 +923,8 @@
 
 	<!--Default mic gain-->
     <path name="builtin_mic_gains">
-        <ctl name="IN1R Digital Volume" value="210" />
+        <ctl name="LHPF1 Input 1 Volume" value="32" />
+        <ctl name="IN1R Digital Volume" value="190" />
     </path>
 	<!--Calls mic gain-->
     <path name="builtin_mic_gains_incall">
@@ -1123,14 +1124,14 @@
     </path>
 
     <path name="headset_mic_gains">
-        <ctl name="IN2R Volume" value="32" />
-        <ctl name="IN2R Digital Volume" value="135" />
+        <ctl name="IN2R Volume" value="30" />
+        <ctl name="IN2R Digital Volume" value="160" />
         <ctl name="LHPF2 Input 1 Volume" value="34" />
     </path>
 
     <path name="headset_mic_gains_incall">
-        <ctl name="IN2R Volume" value="32" />
-        <ctl name="IN2R Digital Volume" value="135" />
+        <ctl name="IN2R Volume" value="30" />
+        <ctl name="IN2R Digital Volume" value="160" />
         <ctl name="HPOUT1L Input 3 Volume" value="9" />
         <ctl name="HPOUT1R Input 3 Volume" value="9" />
         <ctl name="LHPF2 Input 1 Volume" value="34" />
