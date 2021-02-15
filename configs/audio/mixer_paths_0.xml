@@ -262,6 +262,8 @@
         <!-- CP->HP -->
         <ctl name="HPOUT1L Input 2" value="None" />
         <ctl name="HPOUT1R Input 2" value="None" />
+        <ctl name="HPOUT1L Input 3" value="None" />
+        <ctl name="HPOUT1R Input 3" value="None" />
 		<!-- Common paths -->
         <ctl name="ISRC2INT1 Input" value="ASRC2L" />
         <ctl name="LHPF3 Input 1" value="None" />
@@ -297,7 +299,7 @@
         <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
         <ctl name="LHPF3 Input 2" value="AIF1RX1" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-			<!-- Common earpiece/speaker call -->	
+		<!-- Common earpiece/speaker call -->	
         <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Aux 2" value="None" />
         <ctl name="DSP4 Aux 3" value="None" />
@@ -306,29 +308,13 @@
         <ctl name="DSP4 Firmware" value="RX_WB" />
         <ctl name="ASRC2L Input" value="AIF2RX1" />
         <ctl name="DSP4 Aux 1" value="ASRC2L" />
+		<!-- Common call capture paths -->
+        <ctl name="ASRC1L Input" value="ISRC2DEC1" />
+        <ctl name="ASRC1R Input" value="ISRC2DEC1" />
+        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
+        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>
 
-    <!-- ########## Enable/Disable Paths ########## -->
-
-    <path name="ep-disable">
-        <ctl name="RCV Switch" value="0" />
-    </path>
-
-    <path name="hp-enable">
-        <ctl name="HP Switch" value="1" />
-        <ctl name="VI SENSING SWITCH" value="0" />
-    </path>
-
-    <path name="hp-disable">
-        <ctl name="HP Switch" value="0" />
-        <ctl name="DSP1 Aux 1" value="None" />
-        <ctl name="DSP1 Aux 2" value="None" />
-        <ctl name="HPOUT1 DRE Switch" value="0" />
-    </path>
-
-    <path name="hp-mic-enable">
-        <ctl name="Headset Mic Switch" value="1" />
-    </path>
     <!--
     #######################################################
     ### Earpiece
@@ -585,10 +571,6 @@
         <ctl name="EQ1 Input 1" value="None" />
         <ctl name="LHPF1 Input 1" value="IN1R" />
         <ctl name="ISRC2DEC1 Input" value="IN1R" />
-        <ctl name="ASRC1L Input" value="ISRC2DEC1" />
-        <ctl name="ASRC1R Input" value="ISRC2DEC1" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>
 
     <path name="builtin_mic_earpiece_communication">
@@ -913,61 +895,6 @@
 
     <!--
     #######################################################
-    ### Headset In
-    #######################################################
-    -->
-
-    <!-- ### Device ### -->
-    <path name="device-headset-mic-enable">
-        <ctl name="Headset Mic Switch" value="1" />
-    </path>
-
-    <path name="device-headset-mic-disable">
-        <ctl name="Headset Mic Switch" value="0" />
-    </path>
-
-    <path name="headset_mic">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
-        <ctl name="HPOUT1L Input 3" value="None" />
-        <ctl name="HPOUT1R Input 3" value="None" />
-        <ctl name="LHPF2 Input 1" value="IN2R" />
-        <ctl name="ASRC1L Input" value="LHPF2" />
-        <ctl name="ASRC1R Input" value="LHPF2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-    </path>
-
-    <path name="headset_mic_incall">
-        <ctl name="DSP3 Aux 1" value="None" />
-        <ctl name="Sample Rate 2" value="8kHz" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="HPOUT1L Input 3" value="None" />
-        <ctl name="HPOUT1R Input 3" value="None" />
-        <ctl name="LHPF2 Input 1" value="IN2R" />
-        <ctl name="ISRC2DEC1 Input" value="LHPF2" />
-        <ctl name="ASRC1L Input" value="ISRC2DEC1" />
-        <ctl name="ASRC1R Input" value="ISRC2DEC1" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-    </path>
-
-    <path name="headset_mic_gains">
-        <ctl name="IN2R Volume" value="30" />
-        <ctl name="IN2R Digital Volume" value="160" />
-        <ctl name="LHPF2 Input 1 Volume" value="34" />
-    </path>
-
-    <path name="headset_mic_gains_incall">
-        <ctl name="IN2R Volume" value="30" />
-        <ctl name="IN2R Digital Volume" value="160" />
-        <ctl name="HPOUT1L Input 3 Volume" value="9" />
-        <ctl name="HPOUT1R Input 3 Volume" value="9" />
-        <ctl name="LHPF2 Input 1 Volume" value="34" />
-    </path>
-
-    <!--
-    #######################################################
     ### BT MIC IN
     #######################################################
     -->
@@ -1087,7 +1014,6 @@
         <!--        Speaker         -->
         <path name="speaker-normal" />
         <!--        Headphones      -->
-        <path name="device-headset-mic-enable" />
         <path name="headphones" />
         <path name="headphones-gains" />
     </path>
@@ -1201,9 +1127,17 @@
 
     <path name="headset-mic">
         <path name="channel-right" />
-        <path name="headset_mic" />
-		<path name="headset_mic_gains" />
-		<path name="device-headset-mic-enable" />
+		<path name="verb-voicecall" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
+        <ctl name="LHPF2 Input 1" value="IN2R" />
+        <ctl name="ASRC1L Input" value="LHPF2" />
+        <ctl name="ASRC1R Input" value="LHPF2" />
+        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
+        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
+        <ctl name="Headset Mic Switch" value="1" />
+        <ctl name="IN2R Volume" value="30" />
+        <ctl name="IN2R Digital Volume" value="160" />
+        <ctl name="LHPF2 Input 1 Volume" value="32" />
     </path>
 
     <path name="media-headset-mic">
@@ -1263,24 +1197,11 @@
     </path>
 
     <path name="voice-headset-mic">
-        <path name="channel-right" />
-        <path name="headset_mic_incall" />
-        <path name="headset_mic_gains" />
-        <path name="device-headset-mic-enable" />
-    </path>
-
-    <path name="voice-headset-mic-nb">
-        <path name="channel-right" />
-        <path name="device-headset-mic-enable" />
-        <path name="headset_mic_incall" />
-        <path name="headset_mic_gains_incall" />
+        <path name="headset-mic" />
     </path>
 
     <path name="voice-headset-mic-wb">
-        <path name="channel-right" />
-        <path name="device-headset-mic-enable" />
-        <path name="headset_mic_incall" />
-        <path name="headset_mic_gains_incall" />
+        <path name="headset-mic" />
     </path>
 
     <path name="voice-bt-sco-headset-mic">
@@ -1313,10 +1234,7 @@
     </path>
 
     <path name="voice-rec-headset-mic">
-        <path name="channel-right" />
-        <path name="headset_mic" />
-        <path name="headset_mic_gains" />
-        <path name="device-headset-mic-enable" />
+        <path name="headset-mic" />
     </path>
 
     <path name="voice-rec-mic">
