@@ -317,38 +317,38 @@
 
     <!-- ########## Enable/Disable Paths ########## -->
 
-    <path name="device-earpiece-enable">
+    <path name="ep-enable">
         <ctl name="RCV Switch" value="1" />
     </path>
 
-    <path name="device-earpiece-disable">
+    <path name="ep-disable">
         <ctl name="RCV Switch" value="0" />
     </path>
 
-    <path name="speaker_enable">
+    <path name="spk-enable">
         <ctl name="SPK Switch" value="1" />
     </path>
 
-    <path name="speaker_disable">
+    <path name="spk-disable">
         <ctl name="SPK Switch" value="0" />
         <ctl name="VI SENSING Switch" value="0" />
         <ctl name="DSP1L Input 1" value="None" />
         <ctl name="DSP1L Input 2" value="None" />
     </path>
 
-    <path name="device-headphones-enable">
+    <path name="hp-enable">
         <ctl name="HP Switch" value="1" />
         <ctl name="VI SENSING SWITCH" value="0" />
     </path>
 
-    <path name="device-headphones-disable">
+    <path name="hp-disable">
         <ctl name="HP Switch" value="0" />
         <ctl name="DSP1 Aux 1" value="None" />
         <ctl name="DSP1 Aux 2" value="None" />
         <ctl name="HPOUT1 DRE Switch" value="0" />
     </path>
 
-    <path name="headset_mic_enable">
+    <path name="hp-mic-enable">
         <ctl name="Headset Mic Switch" value="1" />
     </path>
     <!--
@@ -1331,14 +1331,14 @@
 
 		<path name="earpiece">
         <path name="verb-normal" />
-        <path name="device-earpiece-enable" />
+        <path name="ep-enable" />
         <path name="earpiece_media" />
         <path name="earpiece_media_gains" />
     </path>
 
     <path name="speaker">
         <path name="verb-normal" />
-        <path name="speaker_enable" />
+        <path name="spk-enable" />
         <path name="speaker_media" />
         <path name="speaker_media_gains" />
     </path>
@@ -1353,7 +1353,7 @@
     <path name="speaker-and-headphones">
         <path name="verb-normal" />
         <!--        Speaker         -->
-        <path name="speaker_enable" />
+        <path name="spk-enable" />
         <path name="speaker_media" />
         <path name="speaker_media_gains" />
         <!--        Headphones      -->
@@ -1364,42 +1364,42 @@
 
     <path name="voice-earpiece">
         <path name="verb-voicecall" />
-        <path name="device-earpiece-enable" />
+        <path name="ep-enable" />
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
     </path>
 
    <path name="voice-earpiece-nb">
         <path name="verb-voicecall" />
-        <path name="device-earpiece-enable" />
+        <path name="ep-enable" />
         <path name="earpiece_incall_NB" />
         <path name="earpiece_incall_gains" />
     </path>
 
     <path name="voice-earpiece-wb">
         <path name="verb-voicecall" />
-        <path name="device-earpiece-enable" />
+        <path name="ep-enable" />
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
     </path>
 
 	<path name="voice-speaker">
         <path name="verb-voicecall" />
-        <path name="speaker_enable" />
+        <path name="spk-enable" />
         <path name="speaker_incall_WB" />
         <path name="speaker_incall_gains" />
 	</path>
 
     <path name="voice-speaker-nb">
         <path name="verb-voicecall" />
-        <path name="speaker_enable" />
+        <path name="spk-enable" />
         <path name="speaker_incall_NB" />
         <path name="speaker_incall_gains" />
     </path>
 
     <path name="voice-speaker-wb">
         <path name="verb-voicecall" />
-        <path name="speaker_enable" />
+        <path name="spk-enable" />
         <path name="speaker_incall_WB" />
         <path name="speaker_incall_gains" />
     </path>
@@ -1463,7 +1463,7 @@
     </path>
 
     <path name="speaker-and-hdmi">
-        <path name="speaker_enable" />
+        <path name="spk-enable" />
         <path name="speaker_media" />
         <path name="speaker_media_gains" />
         <path name="hdmi_media" />
