@@ -227,6 +227,93 @@
 
     <!-- Disable Voice Sensing -->
     <ctl name="VI SENSING Switch" value="0" />
+	
+    <!-- ########## Channels ########## -->
+
+    <path name="channel-left">
+        <ctl name="AIF1TX1 Input 1" value="LHPF1" />
+        <ctl name="AIF1TX2 Input 1" value="LHPF1" />
+    </path>
+
+    <path name="channel-right">
+        <ctl name="AIF1TX1 Input 1" value="LHPF2" />
+        <ctl name="AIF1TX2 Input 1" value="LHPF2" />
+    </path>
+
+    <path name="channel-stereo">
+        <ctl name="AIF1TX1 Input 1" value="LHPF1" />
+        <ctl name="AIF1TX2 Input 1" value="LHPF2" />
+    </path>
+
+    <path name="channel-none">
+        <!-- Empty path -->
+    </path>
+	
+    <!--
+    # Verbs are always applied first. A scenario might overwrite
+    # the verb setting.
+    -->
+
+	<!-- ########## Verb Stage ############ -->
+
+    <path name="verb-ringtone">
+	    <!-- CP->HP -->
+        <ctl name="AIF2 Mode" value="Master" />
+    </path>
+
+    <path name="verb-communication">
+	    <!-- CP->HP -->
+        <ctl name="AIF2 Mode" value="Master" />
+    </path>
+
+    <path name="verb-normal">
+        <ctl name="AIF2 Mode" value="Master" />
+        <ctl name="VI SENSING SWITCH" value="0" />
+        <!-- CP->HP -->
+        <ctl name="HPOUT1L Input 2" value="None" />
+        <ctl name="HPOUT1R Input 2" value="None" />
+    </path>
+
+    <path name="verb-fmradio">
+        <!-- Empty path -->
+    </path>
+
+    <path name="verb-loopback">
+		<ctl name="AIF2 Mode" value="Master" />
+		<ctl name="VI SENSING Switch" value="0" />
+		<ctl name="HPOUT3L Input 3" value="ASRC2L" />
+		<!-- CP->SPK -->
+		<ctl name="HPOUT2L Input 3" value="ASRC2L" />
+		<!-- CP->HP -->
+		<ctl name="HPOUT1L Input 2" value="ASRC2L" />
+		<ctl name="HPOUT1R Input 2" value="ASRC2R" />
+    </path>
+
+    <path name="verb-voicecall">
+		<ctl name="AIF2 Mode" value="Master" />
+		<ctl name="DSP Virtual Output Mux" value="None" />
+        <!-- AP->RCV -->
+        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
+        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
+        <!-- AP->SPK -->
+        <!--
+             Duplicate definition with scenario-speaker-incall
+        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
+        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
+        -->
+        <!-- AP->HP -->
+        <!--
+             Duplicate definition with scenario-headphones-incall
+        <ctl name="HPOUT1L Input 1" value="AIF1RX1" />
+        <ctl name="HPOUT1R Input 1" value="AIF1RX2" />
+        -->
+        <!-- CP->HP -->
+        <!--
+             Duplicate definition with scenario-headphones-incall
+        <ctl name="HPOUT1L Input 2" value="ASRC2L" />
+        <ctl name="HPOUT1R Input 2" value="ASRC2R" />
+        -->
+    </path>
 
     <!-- ########## Enable/Disable Paths ########## -->
 
@@ -1230,98 +1317,6 @@
 
     <!--
     #######################################################
-    ### AUDIO ROUTING
-    #######################################################
-    -->
-
-    <!--
-    # Verbs are always applied first. A scenario might overwrite
-    # the verb setting.
-    -->
-
-	<!-- ########## Verb Stage ############ -->
-
-    <path name="verb_ringtone">
-	    <!-- CP->HP -->
-        <ctl name="AIF2 Mode" value="Master" />
-    </path>
-
-    <path name="verb_communication">
-	    <!-- CP->HP -->
-        <ctl name="AIF2 Mode" value="Master" />
-    </path>
-
-    <path name="verb_normal">
-        <ctl name="AIF2 Mode" value="Master" />
-        <ctl name="VI SENSING SWITCH" value="0" />
-        <!-- CP->HP -->
-        <ctl name="HPOUT1L Input 2" value="None" />
-        <ctl name="HPOUT1R Input 2" value="None" />
-    </path>
-
-    <path name="verb_fmradio">
-    </path>
-
-    <path name="verb_loopback">
-		<ctl name="AIF2 Mode" value="Master" />
-		<ctl name="VI SENSING Switch" value="0" />
-		<ctl name="HPOUT3L Input 3" value="ASRC2L" />
-		<!-- CP->SPK -->
-		<ctl name="HPOUT2L Input 3" value="ASRC2L" />
-		<!-- CP->HP -->
-		<ctl name="HPOUT1L Input 2" value="ASRC2L" />
-		<ctl name="HPOUT1R Input 2" value="ASRC2R" />
-    </path>
-
-    <path name="verb_voicecall">
-		<ctl name="AIF2 Mode" value="Master" />
-		<ctl name="DSP Virtual Output Mux" value="None" />
-        <!-- AP->RCV -->
-        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
-        <!-- AP->SPK -->
-        <!--
-             Duplicate definition with scenario-speaker-incall
-        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-        -->
-        <!-- AP->HP -->
-        <!--
-             Duplicate definition with scenario-headphones-incall
-        <ctl name="HPOUT1L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT1R Input 1" value="AIF1RX2" />
-        -->
-        <!-- CP->HP -->
-        <!--
-             Duplicate definition with scenario-headphones-incall
-        <ctl name="HPOUT1L Input 2" value="ASRC2L" />
-        <ctl name="HPOUT1R Input 2" value="ASRC2R" />
-        -->
-    </path>
-
-    <!-- ########## Channels ########## -->
-
-    <path name="channel_left">
-        <ctl name="AIF1TX1 Input 1" value="LHPF1" />
-        <ctl name="AIF1TX2 Input 1" value="LHPF1" />
-    </path>
-
-    <path name="channel_right">
-        <ctl name="AIF1TX1 Input 1" value="LHPF2" />
-        <ctl name="AIF1TX2 Input 1" value="LHPF2" />
-    </path>
-
-    <path name="channel_stereo">
-        <ctl name="AIF1TX1 Input 1" value="LHPF1" />
-        <ctl name="AIF1TX2 Input 1" value="LHPF2" />
-    </path>
-
-    <path name="channel-none">
-        <!-- Empty path -->
-    </path>
-
-    <!--
-    #######################################################
     ### AUDIO HAL ROUTING
     #######################################################
     -->
@@ -1335,28 +1330,28 @@
     -->
 
 		<path name="earpiece">
-        <path name="verb_normal" />
+        <path name="verb-normal" />
         <path name="device-earpiece-enable" />
         <path name="earpiece_media" />
         <path name="earpiece_media_gains" />
     </path>
 
     <path name="speaker">
-        <path name="verb_normal" />
+        <path name="verb-normal" />
         <path name="speaker_enable" />
         <path name="speaker_media" />
         <path name="speaker_media_gains" />
     </path>
 
     <path name="headphones">
-        <path name="verb_normal" />
+        <path name="verb-normal" />
         <path name="headset_enable" />
         <path name="headset_media" />
         <path name="headset_media_gains" />
     </path>
 
     <path name="speaker-and-headphones">
-        <path name="verb_normal" />
+        <path name="verb-normal" />
         <!--        Speaker         -->
         <path name="speaker_enable" />
         <path name="speaker_media" />
@@ -1368,63 +1363,63 @@
     </path>
 
     <path name="voice-earpiece">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="device-earpiece-enable" />
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
     </path>
 
    <path name="voice-earpiece-nb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="device-earpiece-enable" />
         <path name="earpiece_incall_NB" />
         <path name="earpiece_incall_gains" />
     </path>
 
     <path name="voice-earpiece-wb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="device-earpiece-enable" />
         <path name="earpiece_incall_WB" />
         <path name="earpiece_incall_gains" />
     </path>
 
 	<path name="voice-speaker">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="speaker_enable" />
         <path name="speaker_incall_WB" />
         <path name="speaker_incall_gains" />
 	</path>
 
     <path name="voice-speaker-nb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="speaker_enable" />
         <path name="speaker_incall_NB" />
         <path name="speaker_incall_gains" />
     </path>
 
     <path name="voice-speaker-wb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="speaker_enable" />
         <path name="speaker_incall_WB" />
         <path name="speaker_incall_gains" />
     </path>
 
 	<path name="voice-headphones">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="headset_enable" />
         <path name="headset_incall_WB" />
         <path name="headset_incall_gains" />
 	</path>
 
     <path name="voice-headphones-nb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="headset_enable" />
         <path name="headset_incall_NB" />
         <path name="headset_incall_gains" />
     </path>
 
     <path name="voice-headphones-wb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="headset_enable" />
         <path name="headset_incall_WB" />
         <path name="headset_incall_gains" />
@@ -1446,19 +1441,19 @@
     </path>
 
     <path name="voice-bt-sco-headset">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="btsco_incall_WB" />
         <path name="btsco_incall_gains" />
     </path>
 
     <path name="voice-bt-sco-headset-wb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="btsco_incall_WB" />
         <path name="btsco_incall_gains" />
     </path>
 
     <path name="voice-bt-sco-headset-nb">
-        <path name="verb_voicecall" />
+        <path name="verb-voicecall" />
         <path name="btsco_incall_NB" />
         <path name="btsco_incall_gains" />
     </path>
@@ -1477,28 +1472,28 @@
     <!-- ########## Capture ########## -->
 
     <path name="earpiece-mic">
-        <path name="channel_left" />
+        <path name="channel-left" />
         <path name="builtin_mic_default" />
         <path name="builtin_mic_gains" />
         <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="speaker-mic">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="back_mic_default" />
         <path name="back_mic_gains_incall" />
         <path name="device-back-mic-enable" />
     </path>
 
     <path name="voice-mic">
-        <path name="channel_left" />
+        <path name="channel-left" />
         <path name="builtin_mic_default" />
         <path name="builtin_mic_gains_incall" />
         <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="headset-mic">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="headset_mic" />
 		<path name="headset_mic_gains" />
 		<path name="device-headset-mic-enable" />
@@ -1513,7 +1508,7 @@
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
-        <path name="channel_left" />
+        <path name="channel-left" />
 		<path name="builtin_mic_earpiece_incall_nb" />
         <path name="builtin_mic_gains_incall" />
         <path name="device-builtin-mic-enable" />
@@ -1523,7 +1518,7 @@
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
-        <path name="channel_left" />
+        <path name="channel-left" />
 		<path name="builtin_mic_earpiece_incall_nb" />
         <path name="builtin_mic_gains_incall" />
         <path name="device-builtin-mic-enable" />
@@ -1533,49 +1528,49 @@
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
         <!-- Empty path -->
-        <path name="channel_left" />
+        <path name="channel-left" />
 		<path name="builtin_mic_earpiece_incall_wb" />
         <path name="builtin_mic_gains_incall" />
         <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="voice-speaker-mic">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="back_mic_default" />
         <path name="back_mic_gains_incall" />
         <path name="device-back-mic-enable" />
     </path>
 
     <path name="voice-speaker-mic-wb">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="back_mic_speaker_incall_wb" />
         <path name="back_mic_gains_incall" />
         <path name="device-back-mic-enable" />
     </path>
 
     <path name="voice-speaker-mic-nb">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="back_mic_speaker_incall_nb" />
         <path name="back_mic_gains_incall" />
         <path name="device-back-mic-enable" />
     </path>
 
     <path name="voice-headset-mic">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="headset_mic_incall" />
         <path name="headset_mic_gains" />
         <path name="device-headset-mic-enable" />
     </path>
 
     <path name="voice-headset-mic-nb">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="device-headset-mic-enable" />
         <path name="headset_mic_incall" />
         <path name="headset_mic_gains_incall" />
     </path>
 
     <path name="voice-headset-mic-wb">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="device-headset-mic-enable" />
         <path name="headset_mic_incall" />
         <path name="headset_mic_gains_incall" />
@@ -1611,21 +1606,21 @@
     </path>
 
     <path name="voice-rec-headset-mic">
-        <path name="channel_right" />
+        <path name="channel-right" />
         <path name="headset_mic" />
         <path name="headset_mic_gains" />
         <path name="device-headset-mic-enable" />
     </path>
 
     <path name="voice-rec-mic">
-        <path name="channel_left" />
+        <path name="channel-left" />
         <path name="builtin_mic_default" />
         <path name="builtin_mic_gains" />
         <path name="device-builtin-mic-enable" />
     </path>
 
     <path name="camcorder-mic">
-        <path name="channel_left" />
+        <path name="channel-left" />
         <path name="builtin_mic_default" />
         <path name="builtin_mic_gains" />
         <path name="device-builtin-mic-enable" />
