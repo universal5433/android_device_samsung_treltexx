@@ -373,42 +373,6 @@
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
     </path>
 
-    <!--
-    #######################################################
-    ### Headphones
-    #######################################################
-    -->
-
-    <path name="headphones">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
-        <ctl name="HPOUT1 DRE Switch" value="1" />
-        <ctl name="DSP1 Firmware" value="EDAC" />
-        <ctl name="DSP1 Rate" value="SNCCLK rate 1" />
-        <ctl name="DSP1 Aux 1" value="AIF1RX1" />
-        <ctl name="DSP1 Aux 2" value="AIF1RX2" />
-        <ctl name="HPOUT1L Input 1" value="DSP1.3" />
-        <ctl name="HPOUT1R Input 1" value="DSP1.4" />
-        <ctl name="HPOUT1L Input 2" value="ASRC2L" />
-        <ctl name="HPOUT1R Input 2" value="ASRC2R" />
-        <ctl name="HP Switch" value="1" />
-    </path>
-
-    <path name="headphones-voice"> <!-- Wideband config -->
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="HP Switch" value="1" />
-    </path>
-
-    <path name="headphones-gains">
-        <ctl name="Noise Gate Switch" value="0" />
-        <ctl name="HPOUT1L Impedance Volume" value="114" />
-        <ctl name="HPOUT1R Impedance Volume" value="114" />
-        <ctl name="HPOUT1L Input 1 Volume" value="32" />
-        <ctl name="HPOUT1R Input 1 Volume" value="32" />
-        <ctl name="HPOUT1L Input 2 Volume" value="32" />
-        <ctl name="HPOUT1R Input 2 Volume" value="32" />
-    </path>
-
     <!-- ########## Bluetooth Playback Paths ########## -->
 
     <path name="btsco_media">
@@ -1005,8 +969,26 @@
 
     <path name="headphones">
         <path name="verb-normal" />
-        <path name="headphones" />
-        <path name="headphones-gains" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
+        <ctl name="HPOUT1 DRE Switch" value="1" />
+        <ctl name="DSP1 Firmware" value="EDAC" />
+        <ctl name="DSP1 Rate" value="SNCCLK rate 1" />
+        <ctl name="DSP1 Aux 1" value="AIF1RX1" />
+        <ctl name="DSP1 Aux 2" value="AIF1RX2" />
+        <ctl name="LHPF3 Input 1" value="None" />
+        <ctl name="LHPF3 Input 2" value="None" />
+        <ctl name="HPOUT1L Input 1" value="DSP1.3" />
+        <ctl name="HPOUT1R Input 1" value="DSP1.4" />
+        <ctl name="HPOUT1L Input 2" value="ASRC2L" />
+        <ctl name="HPOUT1R Input 2" value="ASRC2R" />
+        <ctl name="HP Switch" value="1" />
+        <ctl name="Noise Gate Switch" value="0" />
+        <ctl name="HPOUT1L Impedance Volume" value="120" />
+        <ctl name="HPOUT1R Impedance Volume" value="120" />
+        <ctl name="HPOUT1L Input 1 Volume" value="32" />
+        <ctl name="HPOUT1R Input 1 Volume" value="32" />
+        <ctl name="HPOUT1L Input 2 Volume" value="32" />
+        <ctl name="HPOUT1R Input 2 Volume" value="32" />
     </path>
 
     <path name="speaker-and-headphones">
@@ -1015,7 +997,6 @@
         <path name="speaker-normal" />
         <!--        Headphones      -->
         <path name="headphones" />
-        <path name="headphones-gains" />
     </path>
 
     <path name="voice-earpiece">
@@ -1050,14 +1031,20 @@
 
 	<path name="voice-headphones">
         <path name="verb-voicecall" />
-        <path name="headphones-voice" />
-        <path name="headphones-gains" />
+        <path name="headphones" />
+        <ctl name="LHPF3 Input 1" value="None" />
+        <ctl name="LHPF3 Input 2" value="None" />
+        <ctl name="HPOUT1L Input 2 Volume" value="32" />
+        <ctl name="HPOUT1R Input 2 Volume" value="32" />
 	</path>
 
     <path name="voice-headphones-wb">
         <path name="verb-voicecall" />
-        <path name="headphones-voice" />
-        <path name="headphones-gains" />
+        <path name="headphones" />
+        <ctl name="LHPF3 Input 1" value="None" />
+        <ctl name="LHPF3 Input 2" value="None" />
+        <ctl name="HPOUT1L Input 2 Volume" value="32" />
+        <ctl name="HPOUT1R Input 2 Volume" value="32" />
     </path>
 
     <path name="bt-sco-headset">
@@ -1128,16 +1115,13 @@
     <path name="headset-mic">
         <path name="channel-right" />
 		<path name="verb-voicecall" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="LHPF2 Input 1" value="IN2R" />
         <ctl name="ASRC1L Input" value="LHPF2" />
         <ctl name="ASRC1R Input" value="LHPF2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
         <ctl name="Headset Mic Switch" value="1" />
-        <ctl name="IN2R Volume" value="30" />
-        <ctl name="IN2R Digital Volume" value="160" />
-        <ctl name="LHPF2 Input 1 Volume" value="32" />
+        <ctl name="IN2R Volume" value="40" />
+        <ctl name="IN2R Digital Volume" value="150" />
+        <ctl name="LHPF2 Input 1 Volume" value="40" />
     </path>
 
     <path name="media-headset-mic">
