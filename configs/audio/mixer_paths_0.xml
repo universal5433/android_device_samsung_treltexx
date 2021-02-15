@@ -256,16 +256,6 @@
 
 	<!-- ########## Verb Stage ############ -->
 
-    <path name="verb-ringtone">
-	    <!-- CP->HP -->
-        <ctl name="AIF2 Mode" value="Master" />
-    </path>
-
-    <path name="verb-communication">
-	    <!-- CP->HP -->
-        <ctl name="AIF2 Mode" value="Master" />
-    </path>
-
     <path name="verb-normal">
         <ctl name="AIF2 Mode" value="Master" />
         <ctl name="VI SENSING SWITCH" value="0" />
@@ -274,24 +264,19 @@
         <ctl name="HPOUT1R Input 2" value="None" />
     </path>
 
-    <path name="verb-fmradio">
-        <!-- Empty path -->
-    </path>
-
-    <path name="verb-loopback">
-		<ctl name="AIF2 Mode" value="Master" />
-		<ctl name="VI SENSING Switch" value="0" />
-		<ctl name="HPOUT3L Input 3" value="ASRC2L" />
-		<!-- CP->SPK -->
-		<ctl name="HPOUT2L Input 3" value="ASRC2L" />
-		<!-- CP->HP -->
-		<ctl name="HPOUT1L Input 2" value="ASRC2L" />
-		<ctl name="HPOUT1R Input 2" value="ASRC2R" />
-    </path>
-
     <path name="verb-voicecall">
 		<ctl name="AIF2 Mode" value="Master" />
-		<ctl name="DSP Virtual Output Mux" value="None" />
+		<ctl name="DSP Virtual Output Mux" value="None" />	
+		<!-- Call recording route -->
+        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
+        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />		
+		<!-- headphones -->
+        <ctl name="HPOUT1 DRE Switch" value="0" />
+        <ctl name="HPOUT1L Input 2" value="ISRC2INT1" />
+        <ctl name="HPOUT1R Input 2" value="ISRC2INT1" />
+		<!-- earpiece -->
+        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
+        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <!-- AP->RCV -->
         <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
@@ -341,8 +326,6 @@
         <ctl name="ISRC2INT1 Input" value="ASRC2L" />
         <ctl name="LHPF3 Input 1" value="None" />
         <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
         <ctl name="RCV Switch" value="1" />
@@ -364,10 +347,6 @@
         <ctl name="ISRC2INT1 Input" value="DSP4.3" />
         <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
         <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <ctl name="RCV Switch" value="1" />
 		<!--Force speaker off-->
         <ctl name="SPK Switch" value="0" />
@@ -387,10 +366,6 @@
         <ctl name="ISRC2INT1 Input" value="DSP4.3" />
         <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
         <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <ctl name="RCV Switch" value="1" />
 		<!--Force speaker off-->
         <ctl name="SPK Switch" value="0" />
@@ -485,8 +460,6 @@
         <ctl name="ISRC2INT1 Input" value="DSP4.3" />
         <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
         <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
 		<ctl name="SPK Switch" value="1" />
     </path>
@@ -532,15 +505,10 @@
 
     <path name="headphones-voice"> <!-- Wideband config -->
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="HPOUT1 DRE Switch" value="0" />
         <ctl name="ASRC2L Input" value="AIF2RX1" />
         <ctl name="ISRC2INT1 Input" value="ASRC2L" />
         <ctl name="LHPF3 Input 1" value="None" />
         <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT1L Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT1R Input 2" value="ISRC2INT1" />
         <ctl name="HP Switch" value="1" />
     </path>
 
@@ -587,9 +555,6 @@
 		<ctl name="ISRC2DEC4 Input" value="AIF1RX2" />
 		<ctl name="ASRC1IN2L Input" value="AIF2RX1" />
 		<ctl name="ASRC1IN2R Input" value="AIF2RX2" />
-		<!-- Call recording route -->
-		<ctl name="AIF1TX1 Input 2" value="ASRC1IN2L" />
-		<ctl name="AIF1TX2 Input 2" value="ASRC1IN2R" />
     </path>
     <path name="btsco_incall_WB">
 		<ctl name="AIF2 Mode" value="Slave" />
@@ -607,9 +572,6 @@
 		<ctl name="ISRC2DEC4 Input" value="AIF1RX2" />
 		<ctl name="ASRC1IN2L Input" value="AIF2RX1" />
 		<ctl name="ASRC1IN2R Input" value="AIF2RX2" />
-		<!-- Call recording route -->
-		<ctl name="AIF1TX1 Input 2" value="ASRC1IN2L" />
-		<ctl name="AIF1TX2 Input 2" value="ASRC1IN2R" />
     </path>
 
     <path name="btsco_media_gains">
@@ -1117,9 +1079,6 @@
 		<ctl name="ASRC1IN1R Input" value="ISRC2INT2" />
 		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
 		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
-		<!-- Call recording route -->
-		<ctl name="AIF1TX1 Input 1" value="ISRC2INT1" />
-		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
     </path>
 
     <path name="btsco_incall_mic" >
@@ -1133,9 +1092,6 @@
 		<ctl name="ASRC1IN1R Input" value="ISRC2INT2" />
 		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
 		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
-		<!-- Call recording route -->
-		<ctl name="AIF1TX1 Input 1" value="ISRC2INT1" />
-		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
     </path>
 
     <path name="btsco_incall_WB_mic">
