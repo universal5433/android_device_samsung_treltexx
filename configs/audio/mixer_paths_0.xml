@@ -262,6 +262,10 @@
         <!-- CP->HP -->
         <ctl name="HPOUT1L Input 2" value="None" />
         <ctl name="HPOUT1R Input 2" value="None" />
+		<!-- Common paths -->
+        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
+        <ctl name="LHPF3 Input 1" value="None" />
+        <ctl name="LHPF3 Input 2" value="None" />
     </path>
 
     <path name="verb-voicecall">
@@ -289,13 +293,22 @@
         <!-- CP->HP -->
         <ctl name="HPOUT1L Input 2" value="ASRC2L" />
         <ctl name="HPOUT1R Input 2" value="ASRC2R" />
+		<!-- Common paths -->
+        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
+        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
+			<!-- Common earpiece/speaker call -->	
+        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Aux 2" value="None" />
+        <ctl name="DSP4 Aux 3" value="None" />
+        <ctl name="DSP4L Input 1" value="None" />
+        <ctl name="DSP4L Input 2" value="None" />
+        <ctl name="DSP4 Firmware" value="RX_WB" />
+        <ctl name="ASRC2L Input" value="AIF2RX1" />
+        <ctl name="DSP4 Aux 1" value="ASRC2L" />
     </path>
 
     <!-- ########## Enable/Disable Paths ########## -->
-
-    <path name="ep-enable">
-        <ctl name="RCV Switch" value="1" />
-    </path>
 
     <path name="ep-disable">
         <ctl name="RCV Switch" value="0" />
@@ -321,96 +334,18 @@
     ### Earpiece
     #######################################################
     -->
-    <path name="earpiece_media">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
-        <ctl name="RCV Switch" value="1" />
-		<!--Force speaker off-->
-        <ctl name="SPK Switch" value="0" />
-    </path>
 
-    <path name="earpiece_incall_NB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="RX_NB" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="DSP4 Aux 1" value="ASRC2L" />
+    <path name="earpiece-normal">
         <ctl name="DSP4 Aux 2" value="ISRC2DEC1" />
         <ctl name="ISRC2INT1 Input" value="DSP4.3" />
-        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
         <ctl name="RCV Switch" value="1" />
 		<!--Force speaker off-->
         <ctl name="SPK Switch" value="0" />
-    </path>
-
-    <path name="earpiece_incall_WB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="RX_WB" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="DSP4 Aux 1" value="ASRC2L" />
-        <ctl name="DSP4 Aux 2" value="ISRC2DEC1" />
-        <ctl name="ISRC2INT1 Input" value="DSP4.3" />
-        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="RCV Switch" value="1" />
-		<!--Force speaker off-->
-        <ctl name="SPK Switch" value="0" />
-    </path>
-
-    <path name="earpiece_videocall">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT3L Input 2" value="None" />
-        <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
-        <ctl name="HPOUT3R Input 2" value="None" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="RCV Switch" value="1" />
-		<!--Force speaker off-->
-        <ctl name="SPK Switch" value="0" />
-    </path>
-
-    <path name="earpiece_loopback">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
-        <ctl name="AIF1TX1 Input 3" value="None" />
-        <ctl name="AIF1TX2 Input 3" value="None" />
-        <ctl name="EQ2 Input 1" value="None" />
-        <ctl name="ASRC1L Input" value="IN3L" />
-        <ctl name="ASRC1R Input" value="IN3L" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>
 
     <!-- ### Volume ### -->
 
-    <path name="earpiece_media_gains">
-		<ctl name="HPOUT3 Digital Volume" value="128" />
-		<ctl name="HPOUT3L Input 1 Volume" value="32" />
-    </path>
-
-    <path name="earpiece_incall_gains">
+    <path name="earpiece-gain">
 		<ctl name="HPOUT3 Digital Volume" value="124" />
 		<ctl name="HPOUT3L Input 1 Volume" value="32" />
 		<!--CP RX-->
@@ -437,9 +372,6 @@
         <ctl name="DSP4L Input 2" value="AIF1RX2" />
         <ctl name="DSP4 Aux 2" value="IN4L" />
         <ctl name="DSP4 Aux 3" value="IN4R" />
-        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
         <ctl name="HPOUT2L Input 1" value="DSP4.1" />
         <ctl name="HPOUT2L Input 2" value="None" />
         <ctl name="HPOUT2L Input 3" value="None" />
@@ -450,19 +382,8 @@
     </path>
 
     <path name="speaker-voice"> <!-- Wideband config -->
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="RX_WB" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="DSP4 Aux 1" value="ASRC2L" />
         <ctl name="DSP4 Aux 2" value="ISRC2DEC2" />
         <ctl name="ISRC2INT1 Input" value="DSP4.3" />
-        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
     </path>
 
@@ -479,8 +400,6 @@
         <ctl name="DSP1 Rate" value="SNCCLK rate 1" />
         <ctl name="DSP1 Aux 1" value="AIF1RX1" />
         <ctl name="DSP1 Aux 2" value="AIF1RX2" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
         <ctl name="HPOUT1L Input 1" value="DSP1.3" />
         <ctl name="HPOUT1R Input 1" value="DSP1.4" />
         <ctl name="HPOUT1L Input 2" value="ASRC2L" />
@@ -489,9 +408,6 @@
     </path>
 
     <path name="headphones-voice"> <!-- Wideband config -->
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
         <ctl name="LHPF3 Input 1" value="None" />
         <ctl name="LHPF3 Input 2" value="None" />
         <ctl name="HP Switch" value="1" />
@@ -1149,11 +1065,10 @@
     # but as soon as the DSP is turned on.
     -->
 
-		<path name="earpiece">
+	<path name="earpiece">
         <path name="verb-normal" />
-        <path name="ep-enable" />
-        <path name="earpiece_media" />
-        <path name="earpiece_media_gains" />
+        <path name="earpiece-normal" />
+        <path name="earpiece-gain" />
     </path>
 
     <path name="speaker">
@@ -1179,23 +1094,12 @@
 
     <path name="voice-earpiece">
         <path name="verb-voicecall" />
-        <path name="ep-enable" />
-        <path name="earpiece_incall_WB" />
-        <path name="earpiece_incall_gains" />
-    </path>
-
-   <path name="voice-earpiece-nb">
-        <path name="verb-voicecall" />
-        <path name="ep-enable" />
-        <path name="earpiece_incall_NB" />
-        <path name="earpiece_incall_gains" />
+        <path name="earpiece" />
     </path>
 
     <path name="voice-earpiece-wb">
         <path name="verb-voicecall" />
-        <path name="ep-enable" />
-        <path name="earpiece_incall_WB" />
-        <path name="earpiece_incall_gains" />
+        <path name="earpiece" />
     </path>
 
 	<path name="voice-speaker">
