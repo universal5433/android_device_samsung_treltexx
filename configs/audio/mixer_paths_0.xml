@@ -444,6 +444,9 @@
         <ctl name="HPOUT2L Input 2" value="None" />
         <ctl name="HPOUT2L Input 3" value="None" />
 		<ctl name="SPK Switch" value="1" />
+        <ctl name="HPOUT2 Digital Volume" value="140" />
+        <ctl name="HPOUT2L Input 1 Volume" value="26" />
+        <ctl name="HPOUT2R Input 1 Volume" value="26" />
     </path>
 
     <path name="speaker-voice"> <!-- Wideband config -->
@@ -461,25 +464,7 @@
         <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
         <ctl name="LHPF3 Input 2" value="AIF1RX1" />
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
-		<ctl name="SPK Switch" value="1" />
     </path>
-
-    <path name="speaker-normal-gain">
-        <ctl name="HPOUT2 Digital Volume" value="140" />
-        <ctl name="HPOUT2L Input 1 Volume" value="26" />
-        <ctl name="HPOUT2R Input 1 Volume" value="26" />
-        <ctl name="DSP4L Input 1 Volume" value="26" />
-        <ctl name="DSP4L Input 2 Volume" value="26" />
-        <ctl name="IN4L Digital Volume" value="128" />
-        <ctl name="IN4R Digital Volume" value="128" />
-    </path>
-    <path name="speaker-voice-gain">
-        <ctl name="HPOUT2 Digital Volume" value="128" />
-        <ctl name="HPOUT2L Input 1 Volume" value="26" />
-        <ctl name="HPOUT2R Input 1 Volume" value="26" />
-        <ctl name="HPOUT2L Input 3 Volume" value="32" />
-        <ctl name="HPOUT2R Input 3 Volume" value="32" />
-     </path>
 
     <!--
     #######################################################
@@ -1174,7 +1159,6 @@
     <path name="speaker">
         <path name="verb-normal" />
         <path name="speaker-normal" />
-        <path name="speaker-normal-gain" />
     </path>
 
     <path name="headphones">
@@ -1187,7 +1171,6 @@
         <path name="verb-normal" />
         <!--        Speaker         -->
         <path name="speaker-normal" />
-        <path name="speaker-normal-gain" />
         <!--        Headphones      -->
         <path name="device-headset-mic-enable" />
         <path name="headphones" />
@@ -1218,13 +1201,21 @@
 	<path name="voice-speaker">
         <path name="verb-voicecall" />
         <path name="speaker-voice" />
-        <path name="speaker-voice-gain" />
+        <ctl name="HPOUT2 Digital Volume" value="128" />
+        <ctl name="HPOUT2L Input 3 Volume" value="32" />
+        <ctl name="HPOUT2R Input 3 Volume" value="32" />
+        <ctl name="IN4L Digital Volume" value="128" />
+        <ctl name="IN4R Digital Volume" value="128" />
 	</path>
 
     <path name="voice-speaker-wb">
         <path name="verb-voicecall" />
         <path name="speaker-voice" />
-        <path name="speaker-voice-gain" />
+        <ctl name="HPOUT2 Digital Volume" value="128" />
+        <ctl name="HPOUT2L Input 3 Volume" value="32" />
+        <ctl name="HPOUT2R Input 3 Volume" value="32" />
+        <ctl name="IN4L Digital Volume" value="128" />
+        <ctl name="IN4R Digital Volume" value="128" />
     </path>
 
 	<path name="voice-headphones">
@@ -1278,7 +1269,6 @@
 
     <path name="speaker-and-hdmi">
         <path name="speaker-normal" />
-        <path name="speaker-normal-gain" />
         <path name="hdmi_media" />
     </path>
 
