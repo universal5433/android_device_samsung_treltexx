@@ -296,11 +296,8 @@
         <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
         <!-- AP->SPK -->
-        <!--
-             Duplicate definition with scenario-speaker-incall
         <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-        -->
         <!-- AP->HP -->
         <!--
              Duplicate definition with scenario-headphones-incall
@@ -323,17 +320,6 @@
 
     <path name="ep-disable">
         <ctl name="RCV Switch" value="0" />
-    </path>
-
-    <path name="spk-enable">
-        <ctl name="SPK Switch" value="1" />
-    </path>
-
-    <path name="spk-disable">
-        <ctl name="SPK Switch" value="0" />
-        <ctl name="VI SENSING Switch" value="0" />
-        <ctl name="DSP1L Input 1" value="None" />
-        <ctl name="DSP1L Input 2" value="None" />
     </path>
 
     <path name="hp-enable">
@@ -469,21 +455,7 @@
     #######################################################
     -->
 
-    <path name="speaker_default">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 1" />
-        <ctl name="DSP4 Aux 2" value="IN4L" />
-        <ctl name="DSP4 Aux 3" value="IN4R" />
-        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-        <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
-		<ctl name="SPK Switch" value="1" />
-    </path>
-
-    <path name="speaker_media">
+    <path name="speaker-normal">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="DSP4 Rate" value="SYNCCLK rate 1" />
         <ctl name="DSP4 Aux 1" value="None" />
@@ -504,28 +476,8 @@
         <ctl name="HPOUT2L Input 3" value="None" />
 		<ctl name="SPK Switch" value="1" />
     </path>
-    <path name="speaker_incall_NB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="RX_NB" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="DSP4 Aux 1" value="ASRC2L" />
-        <ctl name="DSP4 Aux 2" value="ISRC2DEC2" />
-        <ctl name="ISRC2INT1 Input" value="DSP4.3" />
-        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-		<ctl name="SPK Switch" value="1" />
-    </path>
-    <path name="speaker_incall_WB">
+
+    <path name="speaker-voice"> <!-- Wideband config -->
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Aux 2" value="None" />
@@ -542,25 +494,10 @@
         <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
         <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
 		<ctl name="SPK Switch" value="1" />
     </path>
-    <path name="speaker_videocall">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-        <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-		<ctl name="SPK Switch" value="1" />
-    </path>
-    <path name="speaker_media_gains">
+
+    <path name="speaker-normal-gain">
         <ctl name="HPOUT2 Digital Volume" value="140" />
         <ctl name="HPOUT2L Input 1 Volume" value="26" />
         <ctl name="HPOUT2R Input 1 Volume" value="26" />
@@ -569,7 +506,7 @@
         <ctl name="IN4L Digital Volume" value="128" />
         <ctl name="IN4R Digital Volume" value="128" />
     </path>
-    <path name="speaker_incall_gains">
+    <path name="speaker-voice-gain">
         <ctl name="HPOUT2 Digital Volume" value="128" />
         <ctl name="HPOUT2L Input 1 Volume" value="26" />
         <ctl name="HPOUT2R Input 1 Volume" value="26" />
@@ -975,7 +912,7 @@
         <ctl name="LHPF2 Input 1" value="ISRC1INT2" />
     </path>
 
-    <path name="builtin_mic_speaker_incall_wb">
+    <path name="builtin_mic_speaker-voice-wb">
         <ctl name="Sample Rate 2" value="8kHz" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP2 Rate" value="SYNCCLK rate 3" />
@@ -1063,7 +1000,7 @@
         <ctl name="DSP3L Input 1" value="ISRC1DEC2" />
     </path>
 
-    <path name="back_mic_speaker_incall_wb">
+    <path name="back_mic_speaker-voice-wb">
         <ctl name="EQ2 Input 1" value="IN3L" />
         <ctl name="ISRC2DEC2 Input" value="EQ2" />
         <ctl name="DSP3L Input 1" value="ISRC2DEC2" />
@@ -1111,8 +1048,8 @@
     </path>
 
     <path name="scenario-two-mic-speaker-incall-wb">
-        <path name="builtin_mic_speaker_incall_wb" />
-        <path name="back_mic_speaker_incall_wb" />
+        <path name="builtin_mic_speaker-voice-wb" />
+        <path name="back_mic_speaker-voice-wb" />
     </path>
 
     <path name="scenario-two-mic-headphones-incall-nb">
@@ -1338,9 +1275,8 @@
 
     <path name="speaker">
         <path name="verb-normal" />
-        <path name="spk-enable" />
-        <path name="speaker_media" />
-        <path name="speaker_media_gains" />
+        <path name="speaker-normal" />
+        <path name="speaker-normal-gain" />
     </path>
 
     <path name="headphones">
@@ -1353,9 +1289,8 @@
     <path name="speaker-and-headphones">
         <path name="verb-normal" />
         <!--        Speaker         -->
-        <path name="spk-enable" />
-        <path name="speaker_media" />
-        <path name="speaker_media_gains" />
+        <path name="speaker-normal" />
+        <path name="speaker-normal-gain" />
         <!--        Headphones      -->
         <path name="device-headset-mic-enable" />
         <path name="headset_media" />
@@ -1385,23 +1320,14 @@
 
 	<path name="voice-speaker">
         <path name="verb-voicecall" />
-        <path name="spk-enable" />
-        <path name="speaker_incall_WB" />
-        <path name="speaker_incall_gains" />
+        <path name="speaker-voice" />
+        <path name="speaker-voice-gain" />
 	</path>
-
-    <path name="voice-speaker-nb">
-        <path name="verb-voicecall" />
-        <path name="spk-enable" />
-        <path name="speaker_incall_NB" />
-        <path name="speaker_incall_gains" />
-    </path>
 
     <path name="voice-speaker-wb">
         <path name="verb-voicecall" />
-        <path name="spk-enable" />
-        <path name="speaker_incall_WB" />
-        <path name="speaker_incall_gains" />
+        <path name="speaker-voice" />
+        <path name="speaker-voice-gain" />
     </path>
 
 	<path name="voice-headphones">
@@ -1463,9 +1389,8 @@
     </path>
 
     <path name="speaker-and-hdmi">
-        <path name="spk-enable" />
-        <path name="speaker_media" />
-        <path name="speaker_media_gains" />
+        <path name="speaker-normal" />
+        <path name="speaker-normal-gain" />
         <path name="hdmi_media" />
     </path>
 
@@ -1543,7 +1468,7 @@
 
     <path name="voice-speaker-mic-wb">
         <path name="channel-right" />
-        <path name="back_mic_speaker_incall_wb" />
+        <path name="back_mic_speaker-voice-wb" />
         <path name="back_mic_gains_incall" />
         <path name="device-back-mic-enable" />
     </path>
