@@ -438,66 +438,6 @@
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
     </path>
 
-    <!--
-    #######################################################
-    ### SCO Carkit
-    #######################################################
-    -->
-
-    <!-- ### Device ### -->
-
-    <path name="btsco_carkit_media">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ISRC2INT1 Input" value="None" />
-        <ctl name="VI SENSING Switch" value="0" />
-        <ctl name="Sample Rate 3" value="16kHz" />
-        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
-        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ASRC2R Input" value="AIF2RX2" />
-        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
-        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
-        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
-        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
-    </path>
-
-    <!-- ### Scenario ### -->
-
-    <path name="btsco_carkit_incall_NB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="Sample Rate 3" value="16kHz" />
-        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
-        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ASRC2R Input" value="AIF2RX2" />
-        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
-        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
-        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
-        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
-    </path>
-
-    <path name="btsco_carkit_incall_WB">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="Sample Rate 3" value="16kHz" />
-        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
-        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ASRC2R Input" value="AIF2RX2" />
-        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
-        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
-        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
-        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
-    </path>
-
-    <!-- ### Volume ### -->
-
-    <path name="btsco_carkit_gains">
-        <ctl name="AIF3TX1 Input 1 Volume" value="32" />
-        <ctl name="AIF3TX1 Input 2 Volume" value="32" />
-        <ctl name="AIF3TX2 Input 1 Volume" value="32" />
-        <ctl name="AIF3TX2 Input 2 Volume" value="32" />
-    </path>
-
     <!-- ########## HDMI Playback Paths ########## -->
 
     <path name="hdmi_enable">
