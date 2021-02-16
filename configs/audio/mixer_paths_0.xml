@@ -373,16 +373,6 @@
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
     </path>
 
-    <!-- ########## HDMI Playback Paths ########## -->
-
-    <path name="hdmi_enable">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
-        <ctl name="HDMI Switch" value="1" />
-    </path>
-    <path name="hdmi_media">
-        <path name="hdmi_enable" />
-    </path>
-
     <!-- ########## Mic Media Paths ########## -->
 
     <!--
@@ -617,12 +607,13 @@
     </path>
 
     <path name="hdmi">
-        <path name="hdmi_media" />
+        <path name="verb-normal" />
+        <ctl name="HDMI Switch" value="1" />
     </path>
 
     <path name="speaker-and-hdmi">
         <path name="speaker-normal" />
-        <path name="hdmi_media" />
+        <path name="hdmi" />
     </path>
 
     <!-- ########## Capture ########## -->
@@ -714,6 +705,10 @@
 
     <path name="bt-sco-mic">
         <path name="bt-sco-hs-mic" />
+    </path>
+	
+    <path name="hdmi-mic">
+        <path name="main-mic" />
     </path>
 
     <path name="voice-rec-headset-mic">
