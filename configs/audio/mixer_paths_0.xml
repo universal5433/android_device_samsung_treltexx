@@ -322,8 +322,23 @@
     -->
 
     <path name="earpiece-normal">
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Aux 2" value="None" />
+        <ctl name="DSP4 Aux 3" value="None" />
+        <ctl name="DSP4L Input 1" value="None" />
+        <ctl name="DSP4L Input 2" value="None" />
+        <ctl name="DSP4 Firmware" value="RX_WB" />
+        <ctl name="ASRC2L Input" value="AIF2RX1" />
+        <ctl name="DSP4 Aux 1" value="ASRC2L" />
         <ctl name="DSP4 Aux 2" value="ISRC2DEC1" />
         <ctl name="ISRC2INT1 Input" value="DSP4.3" />
+        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
+        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
+        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
+        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
+        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
+        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
         <ctl name="RCV Switch" value="1" />
 		<!--Force speaker off-->
         <ctl name="SPK Switch" value="0" />
@@ -501,7 +516,6 @@
     -->
 
 	<path name="earpiece">
-        <path name="verb-normal" />
         <path name="earpiece-normal" />
         <path name="earpiece-gain" />
     </path>
@@ -512,7 +526,6 @@
     </path>
 
     <path name="headphones">
-        <path name="verb-normal" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="HPOUT1 DRE Switch" value="1" />
         <ctl name="DSP1 Firmware" value="EDAC" />
