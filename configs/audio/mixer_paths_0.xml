@@ -373,71 +373,6 @@
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
     </path>
 
-    <!-- ########## Bluetooth Playback Paths ########## -->
-
-    <path name="btsco_media">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ISRC2INT1 Input" value="None" />
-        <ctl name="VI SENSING Switch" value="0" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="Sample Rate 3" value="16kHz" />
-        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
-        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="ASRC2R Input" value="AIF2RX2" />
-        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
-        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
-        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
-        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
-    </path>
-    <path name="btsco_incall_NB">
-		<ctl name="AIF2 Mode" value="Slave" />
-		<ctl name="Sample Rate 2" value="8kHz" />
-		<ctl name="ASRC1 Rate 1" value="SYNCCLK rate 1" />
-		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
-		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
-		<ctl name="AIF3TX1 Input 1" value="ISRC2DEC3" />
-		<ctl name="AIF3TX2 Input 1" value="ISRC2DEC4" />
-		<ctl name="AIF3TX1 Input 2" value="ISRC2DEC1" />
-		<ctl name="AIF3TX2 Input 2" value="ISRC2DEC2" />
-		<ctl name="ISRC2DEC1 Input" value="ASRC1IN2L" />
-		<ctl name="ISRC2DEC2 Input" value="ASRC1IN2R" />
-		<ctl name="ISRC2DEC3 Input" value="AIF1RX1" />
-		<ctl name="ISRC2DEC4 Input" value="AIF1RX2" />
-		<ctl name="ASRC1IN2L Input" value="AIF2RX1" />
-		<ctl name="ASRC1IN2R Input" value="AIF2RX2" />
-    </path>
-    <path name="btsco_incall_WB">
-		<ctl name="AIF2 Mode" value="Slave" />
-		<ctl name="Sample Rate 2" value="16kHz" />
-		<ctl name="ASRC1 Rate 1" value="SYNCCLK rate 1" />
-		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
-		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
-		<ctl name="AIF3TX1 Input 1" value="ISRC2DEC3" />
-		<ctl name="AIF3TX2 Input 1" value="ISRC2DEC4" />
-		<ctl name="AIF3TX1 Input 2" value="ISRC2DEC1" />
-		<ctl name="AIF3TX2 Input 2" value="ISRC2DEC2" />
-		<ctl name="ISRC2DEC1 Input" value="ASRC1IN2L" />
-		<ctl name="ISRC2DEC2 Input" value="ASRC1IN2R" />
-		<ctl name="ISRC2DEC3 Input" value="AIF1RX1" />
-		<ctl name="ISRC2DEC4 Input" value="AIF1RX2" />
-		<ctl name="ASRC1IN2L Input" value="AIF2RX1" />
-		<ctl name="ASRC1IN2R Input" value="AIF2RX2" />
-    </path>
-
-    <path name="btsco_media_gains">
-        <ctl name="AIF3TX1 Input 1 Volume" value="40" />
-        <ctl name="AIF3TX1 Input 2 Volume" value="40" />
-        <ctl name="AIF3TX2 Input 1 Volume" value="40" />
-        <ctl name="AIF3TX2 Input 2 Volume" value="40" />
-    </path>
-    <path name="btsco_incall_gains">
-		<ctl name="AIF2TX1 Input 1 Volume" value="32" />
-		<ctl name="AIF2TX2 Input 1 Volume" value="32" />
-		<ctl name="AIF1TX1 Input 1 Volume" value="32" />
-		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
-    </path>
-
     <!-- ########## HDMI Playback Paths ########## -->
 
     <path name="hdmi_enable">
@@ -538,85 +473,17 @@
     ### BT MIC IN
     #######################################################
     -->
-    <path name="btsco_media_mic" >
-		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
-		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
-		<ctl name="ISRC2INT1 Input" value="AIF3RX1" />
-		<ctl name="ISRC2INT2 Input" value="AIF3RX2" />
-		<ctl name="ASRC1IN1L Input" value="ISRC2INT1" />
-		<ctl name="ASRC1IN1R Input" value="ISRC2INT2" />
+	
+    <path name="bt-sco-hs-mic">
+        <path name="channel-none" />
+        <path name="verb-voicecall" />
+        <ctl name="AIF2TX1 Input 2" value="AIF3RX1" />
+        <ctl name="AIF2TX2 Input 2" value="AIF3RX2" />
+        <ctl name="ASRC2L Input" value="AIF3RX1" />
+        <ctl name="ASRC2R Input" value="AIF3RX2" />
 		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
 		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
     </path>
-
-    <path name="btsco_incall_mic" >
-		<ctl name="Sample Rate 2" value="8kHz" />
-		<ctl name="ASRC1 Rate 1" value="SYNCCLK rate 1" />
-		<ctl name="ISRC2 FSL" value="SYNCCLK rate 2" />
-		<ctl name="ISRC2 FSH" value="SYNCCLK rate 1" />
-		<ctl name="ISRC2INT1 Input" value="AIF3RX1" />
-		<ctl name="ISRC2INT2 Input" value="AIF3RX2" />
-		<ctl name="ASRC1IN1L Input" value="ISRC2INT1" />
-		<ctl name="ASRC1IN1R Input" value="ISRC2INT2" />
-		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
-		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
-    </path>
-
-    <path name="btsco_incall_WB_mic">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="AIF2TX1 Input 1" value="None" />
-        <ctl name="AIF2TX2 Input 1" value="None" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ASRC1L Input" value="AIF3RX1" />
-        <ctl name="ASRC1R Input" value="AIF3RX2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-        <ctl name="ISRC1INT1 Input" value="AIF3RX1" />
-        <ctl name="ISRC1INT2 Input" value="AIF3RX2" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC1INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-    </path>
-
-    <path name="btsco_incall_NB_mic">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="AIF2TX1 Input 1" value="None" />
-        <ctl name="AIF2TX2 Input 1" value="None" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ASRC1L Input" value="AIF3RX1" />
-        <ctl name="ASRC1R Input" value="AIF3RX2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-        <ctl name="ISRC1INT1 Input" value="AIF3RX1" />
-        <ctl name="ISRC1INT2 Input" value="AIF3RX2" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC1INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-    </path>
-
-    <path name="btsco_incall_VideoCall_mic">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="AIF2TX1 Input 1" value="None" />
-        <ctl name="AIF2TX2 Input 1" value="None" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
-        <ctl name="ASRC1L Input" value="AIF3RX1" />
-        <ctl name="ASRC1R Input" value="AIF3RX2" />
-        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
-        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-        <ctl name="ISRC1INT1 Input" value="AIF3RX1" />
-        <ctl name="ISRC1INT2 Input" value="AIF3RX2" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC1INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
-        <ctl name="DSP3 Virtual Input" value="None" />
-    </path>
-
-    <path name="btsco_media_mic_gain">
-		<ctl name="AIF1TX1 Input 1 Volume" value="32" />
-		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
-    </path> 
 
     <!--
     #######################################################
@@ -724,36 +591,29 @@
     </path>
 
     <path name="bt-sco-headset">
-        <path name="btsco_media" />
-        <path name="btsco_media_gains" />
+		<path name="verb-normal" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
+        <ctl name="Sample Rate 3" value="16kHz" />
+        <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
+        <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
+        <ctl name="ASRC2L Input" value="AIF2RX1" />
+        <ctl name="ASRC2R Input" value="AIF2RX2" />
+        <ctl name="AIF3TX1 Input 1" value="ISRC1DEC1" />
+        <ctl name="AIF3TX2 Input 1" value="ISRC1DEC2" />
+        <ctl name="AIF3TX1 Input 2" value="ASRC2L" />
+        <ctl name="AIF3TX2 Input 2" value="ASRC2R" />
     </path>
-
-    <path name="bt-sco-headset-nb">
-        <path name="btsco_media" />
-        <path name="btsco_media_gains" />
-    </path>
-
-    <path name="bt-sco-headset-wb">
-        <path name="btsco_incall_WB" />
-        <path name="btsco_incall_gains" />
-    </path>
-
+	
     <path name="voice-bt-sco-headset">
-        <path name="verb-voicecall" />
-        <path name="btsco_incall_WB" />
-        <path name="btsco_incall_gains" />
+        <path name="bt-sco-headset" />
+        <ctl name="AIF3TX1 Input 1 Volume" value="32" />
+        <ctl name="AIF3TX1 Input 2 Volume" value="32" />
+        <ctl name="AIF3TX2 Input 1 Volume" value="32" />
+        <ctl name="AIF3TX2 Input 2 Volume" value="32" />
     </path>
 
     <path name="voice-bt-sco-headset-wb">
-        <path name="verb-voicecall" />
-        <path name="btsco_incall_WB" />
-        <path name="btsco_incall_gains" />
-    </path>
-
-    <path name="voice-bt-sco-headset-nb">
-        <path name="verb-voicecall" />
-        <path name="btsco_incall_NB" />
-        <path name="btsco_incall_gains" />
+        <path name="voice-bt-sco-headset" />
     </path>
 
     <path name="hdmi">
@@ -844,33 +704,16 @@
         <path name="headset-mic" />
     </path>
 
-    <path name="voice-bt-sco-headset-mic">
-        <path name="channel-none" />
-        <path name="btsco_incall_mic" />
+    <path name="voice-bt-sco-mic">
+        <path name="bt-sco-hs-mic" />
     </path>
 
-    <path name="voice-bt-sco-mic">
-        <path name="channel-none" />
-        <path name="btsco_incall_mic" />
-        <path name="btsco_incall_gains" />
+    <path name="voice-bt-sco-mic-wb">
+        <path name="voice-bt-sco-mic" />
     </path>
 
     <path name="bt-sco-mic">
-        <path name="channel-none" />
-        <path name="btsco_media_mic" />
-        <path name="btsco_media_mic_gain" />
-    </path>
-
-    <path name="bt-sco-mic-nb">
-        <path name="channel-none" />
-        <path name="btsco_incall_NB_mic" />
-        <path name="btsco_media_mic_gain" />
-    </path>
-
-    <path name="bt-sco-mic-wb">
-        <path name="channel-none" />
-        <path name="btsco_incall_WB_mic" />
-        <path name="btsco_media_mic_gain" />
+        <path name="bt-sco-hs-mic" />
     </path>
 
     <path name="voice-rec-headset-mic">
