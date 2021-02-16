@@ -546,131 +546,37 @@
     #######################################################
     -->
 
-    <path name="device-back-mic-enable">
-        <ctl name="Sub Mic Switch" value="1" />
-    </path>
-
-    <path name="device-back-mic-disable">
-        <ctl name="Sub Mic Switch" value="0" />
-    </path>
-
-    <path name="back_mic_default">
+    <path name="second-mic">
+        <path name="channel-right" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="AIF1TX1 Input 3" value="None" />
         <ctl name="AIF1TX2 Input 3" value="None" />
         <ctl name="EQ2 Input 1" value="None" />
-        <ctl name="LHPF2 Input 1" value="IN3L" />
+        <ctl name="LHPF2 Input 1" value="IN2L" />
         <ctl name="ASRC1L Input" value="LHPF2" />
         <ctl name="ASRC1R Input" value="LHPF2" />
         <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
         <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-    </path>
-
-    <path name="back_mic_earpiece_incall_nb">
-        <ctl name="EQ2 Input 1" value="IN3L" />
-        <ctl name="ISRC1DEC2 Input" value="EQ2" />
-        <ctl name="DSP3 Aux 2" value="ISRC1DEC2" />
-    </path>
-
-    <path name="back_mic_earpiece_incall_wb">
-        <ctl name="EQ2 Input 1" value="IN3L" />
-        <ctl name="ISRC1DEC2 Input" value="IN3L" />
-        <ctl name="DSP3 Aux 2" value="ISRC2DEC2" />
-    </path>
-
-    <path name="back_mic_speaker_incall_nb">
-        <ctl name="EQ2 Input 1" value="IN3L" />
-        <ctl name="ISRC1DEC2 Input" value="EQ2" />
-        <ctl name="DSP3L Input 1" value="ISRC1DEC2" />
-    </path>
-
-    <path name="back_mic_speaker-voice-wb">
-        <ctl name="EQ2 Input 1" value="IN3L" />
-        <ctl name="ISRC2DEC2 Input" value="EQ2" />
-        <ctl name="DSP3L Input 1" value="ISRC2DEC2" />
+		<ctl name="Sub Mic Switch" value="1" />
     </path>
 
 	<!--Default mic gain-->
-    <path name="back_mic_gains">
-        <ctl name="IN3L Digital Volume" value="160" />
+    <path name="second-mic-normal">
+        <ctl name="IN2L Digital Volume" value="160" />
     </path>
 	<!--Calls mic gain-->
-    <path name="back_mic_gains_incall">
-        <ctl name="IN3L Digital Volume" value="126" />
+    <path name="second-mic-voice">
+        <ctl name="IN2L Digital Volume" value="126" />
         <ctl name="LHPF2 Input 1 Volume" value="32" />
     </path>
-
-    <!--
-    #######################################################
-    ### Two Mic In
-    #######################################################
-    -->
-
-    <path name="device-two-mic-enable">
-        <path name="main-mic" />
-        <path name="device-back-mic-enable" />
-    </path>
-
-    <path name="device-two-mic-disable">
-    </path>
-
-    <path name="scenario-two-mic-earpiece-incall-nb">
-        <path name="main-mic" />
-        <path name="back_mic_earpiece_incall_nb" />
-    </path>
-
-    <path name="scenario-two-mic-earpiece-incall-wb">
-        <path name="main-mic" />
-        <path name="back_mic_earpiece_incall_wb" />
-    </path>
-
-    <path name="scenario-two-mic-speaker-incall-nb">
-        <path name="main-mic" />
-        <path name="back_mic_speaker_incall_nb" />
-    </path>
-
-    <path name="scenario-two-mic-speaker-incall-wb">
-        <path name="main-mic" />
-        <path name="back_mic_speaker-voice-wb" />
-    </path>
-
-    <path name="scenario-two-mic-headphones-incall-nb">
-        <path name="main-mic" />
-        <path name="back_mic_earpiece_incall_nb" />
-    </path>
-
-    <path name="scenario-two-mic-headphones-incall-wb">
-        <path name="main-mic" />
-        <path name="back_mic_earpiece_incall_wb" />
-    </path>
-
-    <path name="volume-two-mic-default">
-        <path name="main-mic-normal" />
-        <path name="back_mic_gains" />
-    </path>
-
-    <path name="volume-two-mic-incall">
-        <path name="main-mic-voice" />
-        <path name="back_mic_gains_incall" />
-    </path>
-
+	
     <!--
     #######################################################
     ### Third Mic
     #######################################################
     -->
 
-    <!-- ### Device ### -->
-    <path name="device-third-mic-enable">
-        <ctl name="Third Mic Switch" value="1" />
-    </path>
-
-    <path name="device-third-mic-disable">
-        <ctl name="Third Mic Switch" value="0" />
-    </path>
-
-    <!-- ### Scenario ### -->
-    <path name="scenario-third-mic-default">
+    <path name="third-mic">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="AIF1TX1 Input 3" value="None" />
         <ctl name="AIF1TX2 Input 3" value="None" />
@@ -680,11 +586,10 @@
         <ctl name="ASRC1R Input" value="LHPF2" />
         <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
         <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
+		<ctl name="Third Mic Switch" value="1" />
     </path>
 
-    <!-- ### Volume ### -->
-
-    <path name="volume-third-mic-default">
+    <path name="third-mic-normal">
         <ctl name="IN3R Digital Volume" value="160" />
     </path>
 
@@ -929,10 +834,8 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="channel-right" />
-        <path name="back_mic_default" />
-        <path name="back_mic_gains_incall" />
-        <path name="device-back-mic-enable" />
+        <path name="second-mic" />
+        <path name="second-mic-voice" />
     </path>
 
     <path name="voice-mic">
@@ -961,49 +864,36 @@
     <path name="voice-earpiece-mic">
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
-        <!--TODO: Add second mic -->
         <path name="channel-left" />
         <path name="main-mic" />
         <path name="main-mic-voice" />
+        <path name="second-mic" />
+        <path name="second-mic-voice" />
     </path>
 
     <path name="voice-earpiece-mic-nb">
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
-        <!--TODO: Add second mic -->
-        <path name="channel-left" />
-        <path name="main-mic" />
-        <path name="main-mic-voice" />
+        <path name="voice-earpiece-mic" />
     </path>
 
     <path name="voice-earpiece-mic-wb">
         <!-- Should be main mic and back mic -->
         <!-- Capture channel set to main mic -->
-        <!--TODO: Add second mic -->
-        <path name="channel-left" />
-        <path name="main-mic" />
-        <path name="main-mic-voice" />
+        <path name="voice-earpiece-mic" />
     </path>
 
     <path name="voice-speaker-mic">
-        <path name="channel-right" />
-        <path name="back_mic_default" />
-        <path name="back_mic_gains_incall" />
-        <path name="device-back-mic-enable" />
+        <path name="second-mic" />
+        <path name="second-mic-voice" />
     </path>
 
     <path name="voice-speaker-mic-wb">
-        <path name="channel-right" />
-        <path name="back_mic_speaker-voice-wb" />
-        <path name="back_mic_gains_incall" />
-        <path name="device-back-mic-enable" />
+        <path name="voice-speaker-mic" />
     </path>
 
     <path name="voice-speaker-mic-nb">
-        <path name="channel-right" />
-        <path name="back_mic_speaker_incall_nb" />
-        <path name="back_mic_gains_incall" />
-        <path name="device-back-mic-enable" />
+        <path name="voice-speaker-mic" />
     </path>
 
     <path name="voice-headset-mic">
@@ -1054,9 +944,8 @@
     </path>
 
     <path name="camcorder-mic">
-        <path name="channel-left" />
         <path name="main-mic" />
-        <path name="main-mic-normal" />
+        <path name="second-mic" />
     </path>
 
     <!--<path name="loopback-aec"> -->
