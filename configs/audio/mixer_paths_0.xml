@@ -382,16 +382,21 @@
     -->
 
     <path name="main-mic">
+		<path name="channel-left" />
         <ctl name="DSP3 Aux 1" value="None" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="AIF1TX1 Input 3" value="None" />
         <ctl name="AIF1TX2 Input 3" value="None" />
         <ctl name="HPOUT3L Input 2" value="None" />
-        <ctl name="HPOUT3R Input 2" value="None" /> <!-- STMR -->
+        <ctl name="HPOUT3R Input 2" value="None" />
         <ctl name="EQ1 Input 1" value="None" />
         <ctl name="LHPF1 Input 1" value="IN1R" />
         <ctl name="ISRC2DEC1 Input" value="IN1R" />
         <ctl name="Main Mic Switch" value="1" />
+        <ctl name="ASRC1L Input" value="ISRC2DEC1" />
+        <ctl name="ASRC1R Input" value="ISRC2DEC1" />
+        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
+        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
     </path>
 
 	<!--Default mic gain-->
@@ -414,22 +419,24 @@
     -->
 
     <path name="second-mic">
+		<path name="channel-right" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="AIF1TX1 Input 3" value="None" />
         <ctl name="AIF1TX2 Input 3" value="None" />
         <ctl name="EQ2 Input 1" value="None" />
         <ctl name="LHPF2 Input 1" value="IN2L" />
+        <ctl name="ISRC2DEC1 Input" value="IN2L" />
+		<ctl name="Sub Mic Switch" value="1" />
         <ctl name="ASRC1L Input" value="LHPF2" />
         <ctl name="ASRC1R Input" value="LHPF2" />
         <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
         <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
-		<ctl name="Sub Mic Switch" value="1" />
     </path>
 
 	<!--Default mic gain-->
     <path name="second-mic-normal">
         <ctl name="IN2L Volume" value="42" />
-        <ctl name="LHPF1 Input 1 Volume" value="32" />
+        <ctl name="LHPF2 Input 1 Volume" value="32" />
         <ctl name="IN2L Digital Volume" value="180" />
     </path>
 	<!--Calls mic gain-->
@@ -623,19 +630,16 @@
     <!-- ########## Capture ########## -->
 
     <path name="earpiece-mic">
-        <path name="channel-left" />
         <path name="main-mic" />
         <path name="main-mic-normal" />
     </path>
 
     <path name="speaker-mic">
-        <path name="channel-right" />
         <path name="second-mic" />
         <path name="second-mic-normal" />
     </path>
 
     <path name="voice-mic">
-        <path name="channel-left" />
         <path name="main-mic" />
         <path name="main-mic-voice" />
     </path>
@@ -654,7 +658,6 @@
 
     <!-- Two mic -->
     <path name="voice-earpiece-mic">
-        <path name="channel-stereo" />
         <path name="main-mic" />
         <path name="main-mic-voice" />
         <path name="second-mic" />
@@ -666,7 +669,6 @@
     </path>
 
     <path name="voice-speaker-mic">
-        <path name="channel-right" />
         <path name="second-mic" />
         <path name="second-mic-normal" />
     </path>
@@ -695,7 +697,6 @@
     </path>
 
     <path name="hdmi-mic">
-        <path name="channel-left" />
         <path name="main-mic" />
         <path name="main-mic-normal" />
     </path>
@@ -712,13 +713,11 @@
     </path>
 
     <path name="voice-rec-mic">
-        <path name="channel-left" />
         <path name="main-mic" />
         <path name="main-mic-normal" />
     </path>
 
     <path name="camcorder-mic">
-        <path name="channel-stereo" />
         <path name="main-mic" />
         <path name="main-mic-normal" />
         <path name="second-mic" />
