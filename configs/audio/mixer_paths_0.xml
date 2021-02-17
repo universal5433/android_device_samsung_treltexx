@@ -476,13 +476,20 @@
 	
     <path name="bt-sco-hs-mic">
         <path name="channel-none" />
-        <path name="verb-voicecall" />
-        <ctl name="AIF2TX1 Input 2" value="AIF3RX1" />
-        <ctl name="AIF2TX2 Input 2" value="AIF3RX2" />
-        <ctl name="ASRC2L Input" value="AIF3RX1" />
-        <ctl name="ASRC2R Input" value="AIF3RX2" />
-		<ctl name="AIF2TX1 Input 1" value="ASRC1IN1L" />
-		<ctl name="AIF2TX2 Input 1" value="ASRC1IN1R" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
+        <ctl name="ASRC1L Input" value="AIF3RX1" />
+        <ctl name="ASRC1R Input" value="AIF3RX2" />
+        <ctl name="AIF2TX1 Input 1" value="ASRC1L" />
+        <ctl name="AIF2TX2 Input 1" value="ASRC1R" />
+        <ctl name="ISRC1INT1 Input" value="AIF3RX1" />
+        <ctl name="ISRC1INT2 Input" value="AIF3RX2" />
+        <ctl name="AIF1TX1 Input 2" value="ISRC1INT1" />
+        <ctl name="AIF1TX2 Input 2" value="ISRC1INT2" />
+        <ctl name="DSP3 Virtual Input" value="None" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
+        <ctl name="AIF2TX1 Input 1" value="None" />
+        <ctl name="AIF2TX2 Input 1" value="None" />
+        <ctl name="DSP3 Virtual Input" value="None" />
     </path>
 
     <!--
@@ -617,6 +624,8 @@
 	
     <path name="voice-bt-sco-headset">
         <path name="bt-sco-headset" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
+        <ctl name="ISRC2INT1 Input" value="None" />
         <ctl name="AIF3TX1 Input 1 Volume" value="32" />
         <ctl name="AIF3TX1 Input 2 Volume" value="32" />
         <ctl name="AIF3TX2 Input 1 Volume" value="32" />
