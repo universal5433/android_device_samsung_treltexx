@@ -4,6 +4,12 @@ on init
     symlink /dev/block/platform/15540000.dwmmc0/by-name/RADIO /dev/mbin0
     restorecon /dev/mbin0
 
+on early-boot
+# Assign TCP buffer thresholds to be ceiling value of technology maximums
+# Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max 2097152
+    write /proc/sys/net/core/wmem_max 2097152
+
 on fs
 # MIF
     chown radio radio /sys/devices/virtual/misc/multipdp/waketime
@@ -12,43 +18,10 @@ on fs
     chown radio system /efs
     chmod 0771 /efs
 
-on early-boot
-# Assign TCP buffer thresholds to be ceiling value of technology maximums
-# Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max 2097152
-    write /proc/sys/net/core/wmem_max 2097152
-
 # Parse hardware revision (needs to happen before cbd starts)
 service modemloader /vendor/bin/modemloader
     class core
     oneshot
-
-on property:ro.modemloader.done=1
-    start cpboot-daemon
-    start ril-daemon
-
-on property:ro.cbd.restart=1
-    restart cpboot-daemon
-    restart ril-daemon
-
-on post-fs-data
-    # Remove symlinks to avoid issues with migrate after nandroid restores
-    # Will be recreated at end of boot
-    rmdir /data/data/com.android.providers.telephony/databases
-    rmdir /data/data/com.android.providers.telephony/shared_prefs
-    rm /data/data/com.android.providers.telephony/databases
-    rm /data/data/com.android.providers.telephony/shared_prefs
-
-on property:sys.boot_completed=1
-    # Symlink directories to access telephony.db and preferred-apn.xml required by cbd
-    symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
-    symlink /data/user_de/0/com.android.providers.telephony/shared_prefs /data/data/com.android.providers.telephony/shared_prefs
-    restorecon /data/data/com.android.providers.telephony/databases
-    restorecon /data/data/com.android.providers.telephony/shared_prefs
-
-    # restart RIL <--> modem stack to account for new locations
-    restart cpboot-daemon
-    restart ril-daemon
 
 # CP Boot Daemon (CBD)
 service cpboot-daemon /vendor/bin/hw/cbd -d -tstem7400 -bh -mh -p 13
@@ -56,3 +29,8 @@ service cpboot-daemon /vendor/bin/hw/cbd -d -tstem7400 -bh -mh -p 13
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
 	disabled
+
+on property:ro.modemloader.done=1
+    start cpboot-daemon
+    start ril-daemon
+
