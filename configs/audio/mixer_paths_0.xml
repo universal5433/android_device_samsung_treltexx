@@ -184,20 +184,19 @@
     <ctl name="HPOUT3 DRE Switch" value="0" />
 
     <!-- EQ1 & EQ3 filter -->
-    <ctl name="EQ1 B1 Volume" value="12" />
-    <ctl name="EQ1 B2 Volume" value="12" />
-    <ctl name="EQ1 B3 Volume" value="12" />
-    <ctl name="EQ1 B4 Volume" value="12" />
-    <ctl name="EQ1 B5 Volume" value="12" />
-    <ctl name="EQ1 Coefficients" value="0 1 16 0 0 0 0 204 32 0 240 0 0 0 21 38 32 0 240 0 0 0 9 60 32 0 240 0 0 0 17 84 16 0 8 0 64 0 0 0" />
+	<ctl name="EQ1 B1 Volume" value="12" />
+	<ctl name="EQ1 B2 Volume" value="12" />
+	<ctl name="EQ1 B3 Volume" value="12" />
+	<ctl name="EQ1 B4 Volume" value="12" />
+	<ctl name="EQ1 B5 Volume" value="12" />
+	<ctl name="EQ1 Coefficients" value="0 1 16 0 0 0 0 204 32 0 240 0 0 0 21 38 32 0 240 0 0 0 9 60 32 0 240 0 0 0 17 84 16 0 8 0 64 0 0 0" />
 
-    <ctl name="EQ3 B1 Volume" value="12" />
-    <ctl name="EQ3 B2 Volume" value="12" />
-    <ctl name="EQ3 B3 Volume" value="12" />
-    <ctl name="EQ3 B4 Volume" value="12" />
-    <ctl name="EQ3 B5 Volume" value="12" />
-    <ctl name="EQ3 Coefficients" value="0 1 16 0 0 0 0 204 32 0 240 0 0 0 21 38 32 0 240 0 0 0 9 60 32 0 240 0 0 0 17 84 16 0 8 0 64 0 0 0" />
-
+	<ctl name="EQ3 B1 Volume" value="12" />
+	<ctl name="EQ3 B2 Volume" value="12" />
+	<ctl name="EQ3 B3 Volume" value="12" />
+	<ctl name="EQ3 B4 Volume" value="12" />
+	<ctl name="EQ3 B5 Volume" value="12" />
+	<ctl name="EQ3 Coefficients" value="0 1 16 0 0 0 0 204 32 0 240 0 0 0 21 38 32 0 240 0 0 0 9 60 32 0 240 0 0 0 17 84 16 0 8 0 64 0 0 0" />
     <!-- Disable Earpiece -->
     <ctl name="RCV Switch" value="0" />
 
@@ -273,103 +272,8 @@
     <path name="verb-voicecall">
 		<ctl name="AIF2 Mode" value="Master" />
 		<ctl name="DSP Virtual Output Mux" value="None" />
-        <!-- AP->RCV -->
         <ctl name="HPOUT3L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
-    </path>
-
-    <!--
-    #######################################################
-    ### Earpiece
-    #######################################################
-    -->
-
-    <path name="earpiece-normal">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="RX_WB" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="DSP4 Aux 1" value="ASRC2L" />
-        <ctl name="DSP4 Aux 2" value="ISRC2DEC1" />
-        <ctl name="ISRC2INT1 Input" value="DSP4.3" />
-        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
-        <ctl name="RCV Switch" value="1" />
-		<!--Force speaker off-->
-        <ctl name="SPK Switch" value="0" />
-    </path>
-
-    <!-- ### Volume ### -->
-
-    <path name="earpiece-gain">
-		<ctl name="HPOUT3 Digital Volume" value="124" />
-		<ctl name="HPOUT3L Input 1 Volume" value="32" />
-		<!--CP RX-->
-		<ctl name="HPOUT3L Input 3 Volume" value="32" />
-		<ctl name="HPOUT3L Input 4 Volume" value="32" />
-    </path>
-
-    <!--
-    #######################################################
-    ### Speaker
-    #######################################################
-    -->
-
-    <path name="speaker-normal">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 1" />
-        <ctl name="DSP4 Aux 1" value="None" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="DSM" />
-        <ctl name="DSP4L Input 1" value="AIF1RX1" />
-        <ctl name="DSP4L Input 2" value="AIF1RX2" />
-        <ctl name="DSP4 Aux 2" value="IN4L" />
-        <ctl name="DSP4 Aux 3" value="IN4R" />
-        <ctl name="HPOUT2L Input 1" value="DSP4.1" />
-        <ctl name="HPOUT2L Input 2" value="None" />
-        <ctl name="HPOUT2L Input 3" value="None" />
-		<ctl name="SPK Switch" value="1" />
-        <ctl name="HPOUT2 Digital Volume" value="140" />
-        <ctl name="HPOUT2L Input 1 Volume" value="26" />
-        <ctl name="HPOUT2R Input 1 Volume" value="26" />
-    </path>
-
-    <path name="speaker-voice"> <!-- Wideband config -->
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
-        <ctl name="DSP4 Aux 2" value="None" />
-        <ctl name="DSP4 Aux 3" value="None" />
-        <ctl name="DSP4L Input 1" value="None" />
-        <ctl name="DSP4L Input 2" value="None" />
-        <ctl name="DSP4 Firmware" value="RX_WB" />
-        <ctl name="ASRC2L Input" value="AIF2RX1" />
-        <ctl name="DSP4 Aux 1" value="ASRC2L" />
-        <ctl name="DSP4 Aux 2" value="ISRC2DEC2" />
-        <ctl name="ISRC2INT1 Input" value="DSP4.3" />
-        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
-        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
-        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
-        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
-        <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
-        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
-        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-		<ctl name="SPK Switch" value="1" />
-        <ctl name="HPOUT2 Digital Volume" value="128" />
-        <ctl name="HPOUT2L Input 3 Volume" value="32" />
-        <ctl name="HPOUT2R Input 3 Volume" value="32" />
-        <ctl name="IN4L Digital Volume" value="128" />
-        <ctl name="IN4R Digital Volume" value="128" />
     </path>
 
     <!-- ########## Mic Media Paths ########## -->
@@ -507,13 +411,57 @@
     -->
 
 	<path name="earpiece">
-        <path name="earpiece-normal" />
-        <path name="earpiece-gain" />
+        <path name="verb-voicecall" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Aux 2" value="None" />
+        <ctl name="DSP4 Aux 3" value="None" />
+        <ctl name="DSP4L Input 1" value="None" />
+        <ctl name="DSP4L Input 2" value="None" />
+        <ctl name="DSP4 Firmware" value="RX_WB" />
+        <ctl name="ASRC2L Input" value="AIF2RX1" />
+        <ctl name="DSP4 Aux 1" value="ASRC2L" />
+        <ctl name="DSP4 Aux 2" value="ISRC2DEC1" />
+        <ctl name="ISRC2INT1 Input" value="DSP4.3" />
+        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
+        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
+        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
+        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
+        <ctl name="HPOUT3L Input 3" value="ISRC2INT1" />
+        <ctl name="HPOUT3R Input 3" value="ISRC2INT1" />
+        <ctl name="RCV Switch" value="1" />
+		<!--Force speaker off-->
+        <ctl name="SPK Switch" value="0" />
+		<ctl name="HPOUT3 Digital Volume" value="124" />
+		<ctl name="HPOUT3L Input 1 Volume" value="32" />
+		<ctl name="HPOUT3L Input 3 Volume" value="32" />
+		<ctl name="HPOUT3L Input 4 Volume" value="32" />
     </path>
 
     <path name="speaker">
         <path name="verb-normal" />
-        <path name="speaker-normal" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
+        <ctl name="DSP4 Rate" value="SYNCCLK rate 1" />
+        <ctl name="DSP4 Aux 1" value="None" />
+        <ctl name="DSP4 Aux 2" value="None" />
+        <ctl name="DSP4 Aux 3" value="None" />
+        <ctl name="DSP4L Input 1" value="None" />
+        <ctl name="DSP4L Input 2" value="None" />
+        <ctl name="DSP4 Firmware" value="DSM" />
+        <ctl name="DSP4L Input 1" value="AIF1RX1" />
+        <ctl name="DSP4L Input 2" value="AIF1RX2" />
+        <ctl name="DSP4 Aux 2" value="IN4L" />
+        <ctl name="DSP4 Aux 3" value="IN4R" />
+        <ctl name="ISRC2INT1 Input" value="ASRC2L" />
+        <ctl name="LHPF3 Input 1" value="None" />
+        <ctl name="LHPF3 Input 2" value="None" />
+        <ctl name="HPOUT2L Input 1" value="DSP4.1" />
+        <ctl name="HPOUT2L Input 2" value="None" />
+        <ctl name="HPOUT2L Input 3" value="None" />
+		<ctl name="SPK Switch" value="1" />
+        <ctl name="HPOUT2 Digital Volume" value="140" />
+        <ctl name="HPOUT2L Input 1 Volume" value="26" />
+        <ctl name="HPOUT2R Input 1 Volume" value="26" />
     </path>
 
     <path name="headphones">
@@ -542,6 +490,7 @@
     </path>
 	
     <path name="headphones-voice">
+        <path name="verb-voicecall" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="HPOUT1 DRE Switch" value="0" />
         <ctl name="ASRC2L Input" value="AIF2RX1" />
@@ -555,6 +504,7 @@
         <ctl name="HPOUT1L Input 2" value="ISRC2INT1" />
         <ctl name="HPOUT1R Input 2" value="ISRC2INT1" />
         <ctl name="HP Switch" value="1" />
+        <ctl name="Noise Gate Switch" value="0" />
         <ctl name="HPOUT1L Impedance Volume" value="120" />
         <ctl name="HPOUT1R Impedance Volume" value="120" />
         <ctl name="HPOUT1L Input 1 Volume" value="32" />
@@ -564,26 +514,44 @@
     </path>
 
     <path name="speaker-and-headphones">
-        <path name="verb-normal" />
-        <!--        Speaker         -->
-        <path name="speaker-normal" />
-        <!--        Headphones      -->
+        <path name="speaker" />
         <path name="headphones" />
     </path>
 
     <path name="voice-earpiece">
-        <path name="verb-voicecall" />
         <path name="earpiece" />
     </path>
 
     <path name="voice-earpiece-wb">
-        <path name="verb-voicecall" />
         <path name="earpiece" />
     </path>
 
 	<path name="voice-speaker">
         <path name="verb-voicecall" />
-        <path name="speaker-voice" />
+        <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
+        <ctl name="DSP4 Aux 2" value="None" />
+        <ctl name="DSP4 Aux 3" value="None" />
+        <ctl name="DSP4L Input 1" value="None" />
+        <ctl name="DSP4L Input 2" value="None" />
+        <ctl name="DSP4 Firmware" value="RX_WB" />
+        <ctl name="ASRC2L Input" value="AIF2RX1" />
+        <ctl name="DSP4 Aux 1" value="ASRC2L" />
+        <ctl name="DSP4 Aux 2" value="ISRC2DEC2" />
+        <ctl name="ISRC2INT1 Input" value="DSP4.3" />
+        <ctl name="LHPF3 Input 1" value="ISRC2INT1" />
+        <ctl name="LHPF3 Input 2" value="AIF1RX1" />
+        <ctl name="AIF1TX1 Input 2" value="ISRC2INT1" />
+        <ctl name="AIF1TX2 Input 2" value="ISRC2INT1" />
+        <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
+        <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
+        <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
+		<ctl name="SPK Switch" value="1" />
+        <ctl name="HPOUT2 Digital Volume" value="128" />
+        <ctl name="HPOUT2L Input 3 Volume" value="32" />
+        <ctl name="HPOUT2R Input 3 Volume" value="32" />
+        <ctl name="IN4L Digital Volume" value="128" />
+        <ctl name="IN4R Digital Volume" value="128" />
 	</path>
 
     <path name="voice-speaker-wb">
@@ -591,21 +559,11 @@
     </path>
 
 	<path name="voice-headphones">
-        <path name="verb-voicecall" />
         <path name="headphones-voice" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="HPOUT1L Input 2 Volume" value="32" />
-        <ctl name="HPOUT1R Input 2 Volume" value="32" />
 	</path>
 
     <path name="voice-headphones-wb">
-        <path name="verb-voicecall" />
-        <path name="headphones" />
-        <ctl name="LHPF3 Input 1" value="None" />
-        <ctl name="LHPF3 Input 2" value="None" />
-        <ctl name="HPOUT1L Input 2 Volume" value="32" />
-        <ctl name="HPOUT1R Input 2 Volume" value="32" />
+        <path name="voice-headphones" />
     </path>
 
     <path name="bt-sco-headset">
@@ -642,7 +600,7 @@
     </path>
 
     <path name="speaker-and-hdmi">
-        <path name="speaker-normal" />
+        <path name="speaker" />
         <path name="hdmi" />
     </path>
 
