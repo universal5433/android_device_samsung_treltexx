@@ -529,6 +529,7 @@
 
 	<path name="voice-speaker">
         <path name="verb-voicecall" />
+		<ctl name="SPK Switch" value="1" />
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Aux 2" value="None" />
@@ -547,12 +548,11 @@
         <ctl name="HPOUT2L Input 3" value="ISRC2INT1" />
         <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
         <ctl name="HPOUT2L Input 2" value="AIF1RX2" />
-		<ctl name="SPK Switch" value="1" />
         <ctl name="HPOUT2 Digital Volume" value="128" />
+        <ctl name="HPOUT2L Input 1 Volume" value="26" />
+        <ctl name="HPOUT2R Input 1 Volume" value="26" />
         <ctl name="HPOUT2L Input 3 Volume" value="32" />
         <ctl name="HPOUT2R Input 3 Volume" value="32" />
-        <ctl name="IN4L Digital Volume" value="128" />
-        <ctl name="IN4R Digital Volume" value="128" />
 	</path>
 
     <path name="voice-speaker-wb">
@@ -639,8 +639,6 @@
     <path name="voice-earpiece-mic">
         <path name="main-mic" />
         <path name="main-mic-voice" />
-        <path name="second-mic" />
-        <path name="second-mic-normal" />
     </path>
 
     <path name="voice-earpiece-mic-wb">
@@ -649,7 +647,7 @@
 
     <path name="voice-speaker-mic">
         <path name="second-mic" />
-        <path name="second-mic-normal" />
+        <path name="second-mic-voice" />
     </path>
 
     <path name="voice-speaker-mic-wb">
