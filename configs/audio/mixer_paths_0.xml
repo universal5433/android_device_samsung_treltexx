@@ -614,8 +614,8 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="second-mic" />
-        <path name="second-mic-normal" />
+        <path name="main-mic" />
+        <path name="main-mic-voice" />
     </path>
 
     <path name="voice-mic">
@@ -646,8 +646,8 @@
     </path>
 
     <path name="voice-speaker-mic">
-        <path name="second-mic" />
-        <path name="second-mic-voice" />
+        <path name="main-mic" />
+        <path name="main-mic-voice" />
     </path>
 
     <path name="voice-speaker-mic-wb">
