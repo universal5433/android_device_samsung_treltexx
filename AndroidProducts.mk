@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2021 The Ressurection Remix Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_treltexx.mk
+    $(LOCAL_DIR)/rr_treltexx.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_treltexx-user \
-    lineage_treltexx-userdebug \
-    lineage_treltexx-eng
+    rr_treltexx-user \
+    rr_treltexx-userdebug \
+    rr_treltexx-eng
